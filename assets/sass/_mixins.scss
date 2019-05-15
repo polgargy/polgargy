@@ -1,0 +1,41 @@
+@mixin background($bg, $parallax: false) {
+  background: url('#{$images-path}#{$bg}');
+  background-size: cover;
+  background-position: center;
+
+  @if $parallax {
+    background-attachment: fixed;
+  }
+}
+
+@mixin hide-input-placeholder() {
+  ::-webkit-input-placeholder {
+    color: transparent;
+  }
+  :-moz-placeholder {
+    color: transparent;
+  }
+ ::-moz-placeholder {
+    color: transparent;
+  }
+ :-ms-input-placeholder {
+    color: transparent;
+  }
+}
+
+@mixin vertical-center($height) {
+  height: $height;
+  line-height: $height;
+}
+
+@mixin ie-edge() {
+  // IE 10+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+
+  // Edge 12+
+  @supports (-ms-ime-align:auto) {
+    @content;
+  }
+}

@@ -24,6 +24,7 @@
     "vue-i18n": "^8.10.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
     "nodemon": "^1.11.0",
     "babel-eslint": "^8.2.1",
     "babel-polyfill": "^6.26.0",

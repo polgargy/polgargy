@@ -45,6 +45,7 @@ module.exports = {
   plugins: [
     '~plugins/common.js',
     '~plugins/filters.js',
+    '~plugins/dom.js',
     '~plugins/i18n.js'
   ],
 

@@ -17,14 +17,13 @@
 @import 'mixins';
 
 // Components
-// @import "components/_partials/header";
-// @import "components/_partials/sidenav";
-// @import "components/_partials/page-header";
+@import "components/_partials/header";
+@import "components/_partials/intro";
 // @import "components/_partials/footer";
 
 
-// @import "_common";
-// @import "pages/_home";
+@import "_common";
+@import "pages/_home";
 // @import "pages/_products";
 // @import "pages/_news";
 // @import "pages/_about";

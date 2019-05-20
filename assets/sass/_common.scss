@@ -1,5 +1,21 @@
-.app-wrapper {
+html {
+  // scroll-behavior: smooth;
+  body {
+    position: relative;
+  }
 
+  h1 {
+    font-weight: 700;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
 }
 
 // < 576px

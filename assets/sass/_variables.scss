@@ -2,12 +2,22 @@ $fa-font-path: "/fonts/fontawesome";
 $images-path: '/images/';
 
 // Colors
-// $white:         #fff;
-// $black:         #000;
 // $primary:       #00a0e0;
 // $secondary:     #57585a;
 
-// $page-nav-color: #aeacac !default;
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+// $border-color: $gray-300;
 
 // $box-shadow-sm:  0 .125rem .25rem rgba($black, .075);
 // $box-shadow:     0 .5rem 1rem rgba($black, .15);
@@ -29,9 +39,9 @@ $font-size-base:         1rem;                               // 16
 // $font-weight-bold:       700;
 
 
-// $h1-font-size:           $font-size-base * 2.1875; // 35
-// $h2-font-size:           $font-size-base * 1.75;   // 28
-// $h3-font-size:           $font-size-base * 1.5625; // 25
+$h1-font-size:           $font-size-base * 5;
+$h2-font-size:           $font-size-base * 2.5;
+$h3-font-size:           $font-size-base * 2;
 // $h4-font-size:           $font-size-base * 1.375;  // 22
 // $h5-font-size:           $font-size-base * 1.25;   // 20
 // $h6-font-size:           $font-size-base;          // 16

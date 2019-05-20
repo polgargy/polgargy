@@ -1,0 +1,10 @@
+section#intro {
+  @include background('intro.jpg', true);
+
+  color: $white;
+  height: 600px;
+
+  .col {
+    background: rgba(10,10,10, .7);
+  }
+}

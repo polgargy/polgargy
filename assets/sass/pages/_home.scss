@@ -1,5 +1,39 @@
 body.home {
+  section#services {
+    i {
+      font-size: $h3-font-size;
+    }
+  }
 
+  section#references {
+    .reference-item {
+      background: $black;
+      padding: 0;
+      position: relative;
+
+      h4 {
+        color: $white;
+        font-weight: 700;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      &:hover {
+        h4 {
+          bottom: 50%;
+          transform: translateY(50%);
+          opacity: 1;
+          transition: all .5s;
+        }
+
+        img {
+          opacity: .5;
+          transition: opacity .5s;
+        }
+      }
+    }
+  }
 }
 
 // >= 576px

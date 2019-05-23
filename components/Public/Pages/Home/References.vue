@@ -1,7 +1,7 @@
 <template>
   <section
     id="references"
-    class="references border-bottom">
+    class="references">
 
     <h3>{{ $t('titles.references') }}</h3>
 

@@ -4,10 +4,7 @@ body.home {
     // background: $gray-300;
     // background: $primary;
 
-
-    background: #193958;
-    background: #121a27;
-    background: #2c3e50;
+    background: $primary;
     color: $white;
   }
 
@@ -18,30 +15,36 @@ body.home {
   }
 
   section.references {
+    padding-bottom: 0;
+
     .reference-item {
       background: $black;
-      border: 1px solid $gray-300;
+      // border: 1px solid $gray-300;
       padding: 0;
       position: relative;
 
       h4 {
         color: $white;
         font-weight: 700;
-        opacity: 0;
+        opacity: 1;
         position: absolute;
+        bottom: 50%;
         width: 100%;
+        transform: translateY(50%);
+      }
+
+      img {
+        opacity: .5;
       }
 
       &:hover {
         h4 {
-          bottom: 50%;
-          transform: translateY(50%);
-          opacity: 1;
+          opacity: 0;
           transition: all .5s;
         }
 
         img {
-          opacity: .5;
+          opacity: 1;
           transition: opacity .5s;
         }
       }
@@ -49,8 +52,17 @@ body.home {
   }
 
   section.contact {
-    a {
-      color: $white;
+    h3 {
+      font-size: $h4-font-size;
+    }
+
+    p {
+      font-size: $font-size-lg;
+      margin-bottom: 0;
+
+      a {
+        color: $white;
+      }
     }
   }
 }

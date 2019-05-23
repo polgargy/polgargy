@@ -2,7 +2,6 @@
   <section
     id="services"
     class="border-bottom">
-    <!-- <h3>Szolgáltatások</h3> -->
 
     <div class="container">
       <div class="row">
@@ -13,7 +12,7 @@
           <i
             :class="s.icon"
             class="mb-4"/>
-          <p>{{ s.text.hu }}</p>
+          <p>{{ s.text[locale] }}</p>
         </div>
       </div>
     </div>
@@ -27,7 +26,10 @@ export default {
   computed: {
     ...mapGetters({
       services: 'texts/getServices'
-    })
+    }),
+    locale() {
+      return this.$i18n.locale
+    }
   }
 }
 </script>

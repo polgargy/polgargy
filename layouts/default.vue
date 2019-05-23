@@ -25,6 +25,11 @@ export default {
     TheHeader,
     TheIntro,
     TheFooter
+  },
+  head() {
+    return {
+      title: this.$t('titles.title') + ' - ' + this.$t('titles.subtitle')
+    }
   }
 }
 </script>

@@ -5,14 +5,16 @@
     <nav
       id="navbar"
       class="navbar navbar-expand-lg navbar-dark">
-      <a
+
+      <nuxt-link
+        to="/"
         class="navbar-brand"
         href="#">
         <img
           src="~static/images/logo.svg"
           alt="Logo"
           class="img-fluid logo">
-      </a>
+      </nuxt-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -34,7 +36,7 @@
               <a
                 class="nav-link"
                 href="#about">
-                Rólam
+                {{ $t('routes.about') }}
               </a>
             </li>
 
@@ -42,7 +44,7 @@
               <a
                 class="nav-link"
                 href="#services">
-                Szolgáltatások
+                {{ $t('routes.services') }}
               </a>
             </li>
 
@@ -50,7 +52,7 @@
               <a
                 class="nav-link"
                 href="#references">
-                Referenciák
+                {{ $t('routes.references') }}
               </a>
             </li>
 
@@ -58,19 +60,8 @@
               <a
                 class="nav-link"
                 href="#contact">
-                Kapcsolat
+                {{ $t('routes.contact') }}
               </a>
-            </li>
-          </template>
-
-          <!-- Reference page -->
-          <template v-else>
-            <li class="nav-item">
-              <nuxt-link
-                class="nav-link"
-                to="/">
-                Vissza
-              </nuxt-link>
             </li>
           </template>
         </ul>
@@ -78,24 +69,25 @@
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a
-              id="navbarDropdown"
+              id="lang-switch"
               class="nav-link dropdown-toggle"
               href="#"
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false">
-              HU
+              {{ selectedLang | uppercase }}
             </a>
             <div
               class="dropdown-menu"
-              aria-labelledby="navbarDropdown">
+              aria-labelledby="lang-switch">
               <a
+                v-for="lang in langs"
+                :key="lang.id"
+                :class="lang === selectedLang ? 'active' : ''"
                 class="dropdown-item"
-                href="#">HU</a>
-              <a
-                class="dropdown-item"
-                href="#">EN</a>
+                href="#"
+                @click.prevent="changeLang(lang)">{{ lang | uppercase }}</a>
             </div>
           </li>
         </ul>
@@ -118,7 +110,9 @@ export default {
   data() {
     return {
       isHomePage: true,
-      headerClass: ''
+      headerClass: '',
+      langs: ['hu', 'en'],
+      selectedLang: this.$getStoredItem('selectedLang')
     }
   },
   watch: {
@@ -147,6 +141,11 @@ export default {
       } else {
         this.headerClass = ''
       }
+    },
+    changeLang(lang) {
+      localStorage.setItem('selectedLang', lang)
+      this.selectedLang = lang
+      this.$i18n.locale = lang
     }
   }
 }

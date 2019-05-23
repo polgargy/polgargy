@@ -3,7 +3,7 @@
     id="references"
     class="border-bottom">
 
-    <h3>{{ content.title.hu }}</h3>
+    <h3>{{ $t('titles.references') }}</h3>
 
     <div class="container-fluid">
       <div class="row">
@@ -16,11 +16,11 @@
             :to="'/references/' + r.slug">
 
             <img
-              :alt="r.title.hu"
+              :alt="r.title[locale]"
               :src="refPath + r.slug + '/thumb1.png'"
               class="img-fluid">
 
-            <h4>{{ r.title.hu }}</h4>
+            <h4>{{ r.title[locale] }}</h4>
           </nuxt-link>
         </div>
       </div>
@@ -39,9 +39,11 @@ export default {
   },
   computed: {
     ...mapGetters({
-      content: 'texts/getReferences',
       references: 'references/getAll'
-    })
+    }),
+    locale() {
+      return this.$i18n.locale
+    }
   }
 }
 </script>

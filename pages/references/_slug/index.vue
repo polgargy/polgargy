@@ -1,12 +1,12 @@
 <template>
   <section id="reference">
 
-    <h3>{{ ref.title.hu }}</h3>
+    <h3>{{ ref.title[locale] }}</h3>
 
     <div class="container">
       <div class="row">
         <div class="col">
-          <p>{{ ref.description.hu }}</p>
+          <p>{{ ref.description[locale] }}</p>
 
           <p v-if="ref.url">
             <a
@@ -29,7 +29,7 @@
           class="reference-item col-12 col-sm mb-4">
           <!-- FIXME alt -->
           <img
-            :alt="ref.title.hu + idx"
+            :alt="ref.title[locale] + idx"
             :src="thumb"
             class="img-fluid"
             @click="index = idx">
@@ -38,11 +38,10 @@
 
       <div class="row">
         <div class="col">
-          <p>
-            <nuxt-link to="/">
-              Vissza
-            </nuxt-link>
-          </p>
+          <nuxt-link
+            to="/"
+            class="btn btn-primary"><i class="fas fa-chevron-left"/> {{ $t('misc.back') }}
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -72,7 +71,10 @@ export default {
   computed: {
     ...mapGetters({
       ref: 'references/getReference'
-    })
+    }),
+    locale() {
+      return this.$i18n.locale
+    }
   },
   created() {
     this.fetchRef(this.$route.params.slug)

@@ -1,3 +1,16 @@
 {
-  "test": "HU"
+  "routes": {
+    "about": "Rólam",
+    "services": "Szolgáltatások",
+    "references": "Referenciák",
+    "contact": "Kapcsolat"
+  },
+  "titles": {
+    "title": "Polgár György",
+    "subtitle": "Webfejlesztő",
+    "references": "Néhány korábbi munkám"
+  },
+  "misc": {
+    "back": "Vissza"
+  }
 }

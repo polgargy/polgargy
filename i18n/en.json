@@ -1,3 +1,16 @@
 {
-  "test": "EN"
+  "routes": {
+    "about": "About",
+    "services": "Services",
+    "references": "References",
+    "contact": "Contact"
+  },
+  "titles": {
+    "title": "György Polgár",
+    "subtitle": "Web Developer",
+    "references": "Some of my previous work"
+  },
+  "misc": {
+    "back": "Back"
+  }
 }

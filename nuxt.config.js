@@ -83,5 +83,8 @@ module.exports = {
         'moment': 'moment'
       })
     ]
+  },
+  env: {
+    refPath: process.env.REF_PATH
   }
 }

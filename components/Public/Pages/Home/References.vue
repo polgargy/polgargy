@@ -17,7 +17,7 @@
 
             <img
               :alt="r.title.hu"
-              :src="'/images/references/thumbnails/' + r.images[0]"
+              :src="refPath + r.slug + '/thumb1.png'"
               class="img-fluid">
 
             <h4>{{ r.title.hu }}</h4>
@@ -32,6 +32,11 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  data() {
+    return {
+      refPath: process.env.refPath
+    }
+  },
   computed: {
     ...mapGetters({
       content: 'texts/getReferences',

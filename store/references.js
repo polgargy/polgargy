@@ -2,6 +2,7 @@ export const state = () => ({
   references: [
     {
       slug: 'borsanyizsuzsanna',
+      url: 'https://borsanyizsuzsanna.com',
       title: {
         hu: 'Borsányi Zsuzsanna',
         en: 'Zsuzsanna Borsányi'
@@ -12,14 +13,17 @@ export const state = () => ({
         en:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda maiores itaque maxime perferendis suscipit perspiciatis dolor ab autem aperiam eius, repellat, fugiat error tempora eveniet minima, fuga deleniti quas.'
       },
-      images: [
-        'borsanyizsuzsanna1.png',
-        'borsanyizsuzsanna2.png',
-        'borsanyizsuzsanna3.png'
-      ]
+      filesCount: 3,
+      // VueGallery needs one (in this case two... original + thumb) arrays (with the same sizes)
+      // so they're going to be set in mutSetReference mutation:
+      images: {
+        thumbnails: [],
+        originals: []
+      }
     },
     {
       slug: 'otpbanka',
+      url: '',
       title: {
         hu: 'OTP Banka Intranet Portal',
         en: 'OTP Banka Intranet Portal'
@@ -30,14 +34,15 @@ export const state = () => ({
         en:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, tenetur debitis impedit fuga dolorem sit, corporis vitae tempore ipsa sequi ducimus. Nulla numquam ut necessitatibus tempore perspiciatis quas veritatis, soluta.'
       },
-      images: [
-        'borsanyizsuzsanna1.png',
-        'borsanyizsuzsanna2.png',
-        'borsanyizsuzsanna3.png'
-      ]
+      filesCount: 3,
+      images: {
+        thumbnails: [],
+        originals: []
+      }
     },
     {
       slug: 'kesmarki',
+      url: 'https://www.kesmarki.com',
       title: {
         hu: 'Késmárki szoftverfejlesztő Kft.',
         en: 'Késmárki Software Development Ltd.'
@@ -48,14 +53,15 @@ export const state = () => ({
         en:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum consectetur magni, facilis quibusdam! Quaerat dignissimos laborum alias dolores aspernatur deserunt quae possimus quia, fugiat cupiditate, delectus adipisci ipsa nisi suscipit!'
       },
-      images: [
-        'borsanyizsuzsanna1.png',
-        'borsanyizsuzsanna2.png',
-        'borsanyizsuzsanna3.png'
-      ]
+      filesCount: 3,
+      images: {
+        thumbnails: [],
+        originals: []
+      }
     },
     {
       slug: 'cngtoltoallomas',
+      url: 'https://cngtoltoallomas.hu',
       title: {
         hu: 'CNG Töltőállomás Kft.',
         en: 'CNG Filling Station Ltd.'
@@ -66,14 +72,15 @@ export const state = () => ({
         en:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse temporibus nam odit corporis eos voluptatibus quis obcaecati, sunt amet nemo similique debitis, nihil hic dignissimos optio mollitia sit natus modi.'
       },
-      images: [
-        'borsanyizsuzsanna1.png',
-        'borsanyizsuzsanna2.png',
-        'borsanyizsuzsanna3.png'
-      ]
+      filesCount: 3,
+      images: {
+        thumbnails: [],
+        originals: []
+      }
     },
     {
       slug: 'ceginformacio',
+      url: 'https://ceginformacio.hu',
       title: {
         hu: 'Céginformáció',
         en: 'Céginformáció - Company Register'
@@ -84,14 +91,15 @@ export const state = () => ({
         en:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam possimus, cupiditate, laborum at similique, repudiandae temporibus tenetur molestias cumque itaque incidunt recusandae enim inventore voluptatem quae aspernatur consequuntur iusto provident.'
       },
-      images: [
-        'borsanyizsuzsanna1.png',
-        'borsanyizsuzsanna2.png',
-        'borsanyizsuzsanna3.png'
-      ]
+      filesCount: 3,
+      images: {
+        thumbnails: [],
+        originals: []
+      }
     },
     {
-      slug: 'transferpricing',
+      slug: 'transferpricing24',
+      url: 'http://transferpricing24.hu',
       title: {
         hu: 'Transferprincing24',
         en: 'Transferprincing24'
@@ -102,14 +110,15 @@ export const state = () => ({
         en:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias modi amet quidem animi, deleniti, cupiditate assumenda et neque ipsa maxime laudantium, sapiente odio impedit delectus quas commodi minima consectetur explicabo.'
       },
-      images: [
-        'borsanyizsuzsanna1.png',
-        'borsanyizsuzsanna2.png',
-        'borsanyizsuzsanna3.png'
-      ]
+      filesCount: 3,
+      images: {
+        thumbnails: [],
+        originals: []
+      }
     },
     {
       slug: 'ugyfelportal',
+      url: '',
       title: {
         hu: 'Magyar Faktorház Ügyfélportál',
         en: 'MFH - Client Portal'
@@ -120,14 +129,15 @@ export const state = () => ({
         en:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores adipisci, quae, cumque pariatur cupiditate atque nobis, quas ratione sit et temporibus impedit. Incidunt in facilis ab minus laborum commodi libero.'
       },
-      images: [
-        'borsanyizsuzsanna1.png',
-        'borsanyizsuzsanna2.png',
-        'borsanyizsuzsanna3.png'
-      ]
+      filesCount: 3,
+      images: {
+        thumbnails: [],
+        originals: []
+      }
     },
     {
       slug: 'scafellpike',
+      url: 'https://www.scafellpike.org.uk',
       title: {
         hu: 'Scafell Pike',
         en: 'Scafell Pike'
@@ -138,11 +148,11 @@ export const state = () => ({
         en:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti soluta, enim iste saepe fugiat recusandae accusamus atque voluptate ducimus laudantium sint suscipit animi, praesentium neque deserunt culpa quas laboriosam necessitatibus.'
       },
-      images: [
-        'borsanyizsuzsanna1.png',
-        'borsanyizsuzsanna2.png',
-        'borsanyizsuzsanna3.png'
-      ]
+      filesCount: 3,
+      images: {
+        thumbnails: [],
+        originals: []
+      }
     }
   ],
   reference: {}
@@ -150,6 +160,20 @@ export const state = () => ({
 
 export const mutations = {
   mutSetReference(state, reference) {
+    // have to reset them because this reference is pointing to state.references
+    reference.images.thumbnails = []
+    reference.images.originals = []
+
+    for (let i = 1; i <= reference.filesCount; i++) {
+      // const file = reference.files[i]
+      reference.images.thumbnails.push(
+        process.env.refPath + reference.slug + '/thumb' + i + '.png'
+      )
+      reference.images.originals.push(
+        process.env.refPath + reference.slug + '/' + i + '.png'
+      )
+    }
+
     state.reference = reference
   }
 }

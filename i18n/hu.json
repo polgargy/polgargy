@@ -1,7 +1,6 @@
 {
   "routes": {
     "about": "Rólam",
-    "services": "Szolgáltatások",
     "references": "Referenciák",
     "contact": "Kapcsolat"
   },

@@ -1,13 +1,26 @@
 body.home {
-  section#services {
+  section.services,
+  section.contact {
+    // background: $gray-300;
+    // background: $primary;
+
+
+    background: #193958;
+    background: #121a27;
+    background: #2c3e50;
+    color: $white;
+  }
+
+  section.services {
     i {
       font-size: $h3-font-size;
     }
   }
 
-  section#references {
+  section.references {
     .reference-item {
       background: $black;
+      border: 1px solid $gray-300;
       padding: 0;
       position: relative;
 
@@ -32,6 +45,12 @@ body.home {
           transition: opacity .5s;
         }
       }
+    }
+  }
+
+  section.contact {
+    a {
+      color: $white;
     }
   }
 }

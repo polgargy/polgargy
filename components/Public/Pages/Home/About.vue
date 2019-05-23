@@ -1,7 +1,7 @@
 <template>
   <section
     id="about"
-    class="border-bottom">
+    class="about border-bottom">
 
     <div class="container">
       <div class="row align-items-center">

@@ -1,7 +1,6 @@
 {
   "routes": {
     "about": "About",
-    "services": "Services",
     "references": "References",
     "contact": "Contact"
   },

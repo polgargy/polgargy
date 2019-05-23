@@ -1,11 +1,16 @@
-<!-- <template>
-  <section id="contact">
+<template>
+  <section
+    id="contact"
+    class="contact">
+    <h3>{{ contact.text[locale] }}</h3>
+
     <div class="container">
-
-      <h3>{{ texts.title.hu }}</h3>
-
       <div class="row">
-        <div class="col"/>
+        <div class="col text-center">
+          <!-- <p><strong>{{ contact.text[locale] }}</strong></p> -->
+          <p><i class="fas fa-phone"/> <a href="mailto:info@polgargy.hu">info@polgargy.hu</a></p>
+          <p><i class="fas fa-envelope"/> +36 30 6170323</p>
+        </div>
       </div>
     </div>
   </section>
@@ -17,9 +22,11 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters({
-      texts: 'texts/getContact'
-    })
+      contact: 'texts/getContact'
+    }),
+    locale() {
+      return this.$i18n.locale
+    }
   }
 }
 </script>
- -->

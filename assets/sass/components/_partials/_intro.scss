@@ -2,9 +2,16 @@ section#intro {
   @include background('intro.jpg', true);
 
   color: $white;
-  height: 600px;
 
   .col {
     background: rgba(10,10,10, .7);
+  }
+
+  body.home & {
+    height: 600px;
+  }
+
+  body.reference & {
+    height: 300px;
   }
 }

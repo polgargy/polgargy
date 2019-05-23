@@ -1,7 +1,5 @@
 <template>
-  <section
-    id="services"
-    class="border-bottom">
+  <section class="services border-bottom">
 
     <div class="container">
       <div class="row">

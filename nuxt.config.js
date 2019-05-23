@@ -89,5 +89,37 @@ module.exports = {
   },
   env: {
     refPath: process.env.REF_PATH
+  },
+  generate: {
+    routes: function() {
+      // Fetch all of the dynamic routes:
+      const routes = [
+        '/references/borsanyizsuzsanna',
+        '/references/otpbanka',
+        '/references/kesmarki',
+        '/references/cngtoltoallomas',
+        '/references/ceginformacio',
+        '/references/transferpricing24',
+        '/references/ugyfelportal',
+        '/references/scafellpike'
+      ]
+
+      return routes
+
+      // return axios.get('https://nuxt-blog-74b24.firebaseio.com/posts.json') // not the nuxt module, the "original" axios package
+      //   .then(res => {
+      //     const routes = []
+      //     for (const key in res.data) {
+      //       routes.push({
+      //         route: '/posts/' + key,
+      //         payload:  {postData: res.data[key]}
+      //       })
+      //     }
+      //     return routes
+      //   })
+      // return [
+      // '/posts/-LVckMxPJBIMKp7cual5'
+      // ]
+    }
   }
 }

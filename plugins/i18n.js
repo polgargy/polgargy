@@ -5,7 +5,10 @@ Vue.use(VueI18n)
 
 export default ({ app, req }) => {
   app.i18n = new VueI18n({
-    locale: app.$getStoredItem('selectedLang'),
+    locale: app.$getStoredItem('selectedLang')
+      ? app.$getStoredItem('selectedLang')
+      : 'hu',
+    // locale: 'hu',
     fallbackLocale: 'hu',
     messages: {
       hu: require('~/i18n/hu.json'),

@@ -76,7 +76,7 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false">
-              {{ selectedLang | uppercase }}
+              {{ locale | uppercase }}
             </a>
             <div
               class="dropdown-menu"
@@ -84,7 +84,7 @@
               <a
                 v-for="lang in langs"
                 :key="lang.id"
-                :class="lang === selectedLang ? 'active' : ''"
+                :class="lang === locale ? 'active' : ''"
                 class="dropdown-item"
                 href="#"
                 @click.prevent="changeLang(lang)">{{ lang | uppercase }}</a>
@@ -111,8 +111,12 @@ export default {
     return {
       isHomePage: true,
       headerClass: '',
-      langs: ['hu', 'en'],
-      selectedLang: this.$getStoredItem('selectedLang')
+      langs: ['hu', 'en']
+    }
+  },
+  computed: {
+    locale() {
+      return this.$i18n.locale
     }
   },
   watch: {
@@ -144,7 +148,6 @@ export default {
     },
     changeLang(lang) {
       localStorage.setItem('selectedLang', lang)
-      this.selectedLang = lang
       this.$i18n.locale = lang
     }
   }

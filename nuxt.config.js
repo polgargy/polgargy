@@ -9,6 +9,9 @@ module.exports = {
   ** Headers of the page
   */
   head: {
+    htmlAttrs: {
+      lang: 'hu'
+    },
     title: process.env.APP_NAME,
     meta: [
       { charset: 'utf-8' },

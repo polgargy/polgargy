@@ -60,6 +60,11 @@ module.exports = {
     '@nuxtjs/dotenv'
   ],
 
+  transition: {
+    name: 'page',
+    mode: 'out-in'
+  },
+
   /*
   ** Build configuration
   */

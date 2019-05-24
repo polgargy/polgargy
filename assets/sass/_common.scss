@@ -13,9 +13,23 @@ html {
     margin-bottom: 40px;
   }
 
+  p {
+    font-size: $font-size-lg;
+  }
+
   section {
     padding: 70px 0;
   }
+}
+
+// Animations for route changes
+.page-enter-active,
+.page-leave-active {
+  transition: opacity .2s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }
 
 // < 576px

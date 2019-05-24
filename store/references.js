@@ -8,10 +8,8 @@ export const state = () => ({
         en: 'Zsuzsanna Borsányi'
       },
       description: {
-        hu:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda maiores itaque maxime perferendis suscipit perspiciatis dolor ab autem aperiam eius, repellat, fugiat error tempora eveniet minima, fuga deleniti quas.',
-        en:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda maiores itaque maxime perferendis suscipit perspiciatis dolor ab autem aperiam eius, repellat, fugiat error tempora eveniet minima, fuga deleniti quas.'
+        hu: 'Borsányi Zsuzsanna portfólió weboldala.',
+        en: "Zsuzsanna Borsányi's portfolio website."
       },
       filesCount: 3,
       // VueGallery needs one (in this case two... original + thumb) arrays (with the same sizes)
@@ -30,9 +28,9 @@ export const state = () => ({
       },
       description: {
         hu:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, tenetur debitis impedit fuga dolorem sit, corporis vitae tempore ipsa sequi ducimus. Nulla numquam ut necessitatibus tempore perspiciatis quas veritatis, soluta.',
+          'Az OTP Banka (Horvátország) intranet portálja, ami a Késmárki szoftverfejlesztő Kft. INDECS követeléskezelő rendszerével van összeköttetésben.',
         en:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, tenetur debitis impedit fuga dolorem sit, corporis vitae tempore ipsa sequi ducimus. Nulla numquam ut necessitatibus tempore perspiciatis quas veritatis, soluta.'
+          'The intranet portal of OTP Banka (Croatia), which is connected to the INDECS debt collection system of Késmárki Software Development Ltd.'
       },
       filesCount: 3,
       images: {
@@ -48,10 +46,8 @@ export const state = () => ({
         en: 'Késmárki Software Development Ltd.'
       },
       description: {
-        hu:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum consectetur magni, facilis quibusdam! Quaerat dignissimos laborum alias dolores aspernatur deserunt quae possimus quia, fugiat cupiditate, delectus adipisci ipsa nisi suscipit!',
-        en:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum consectetur magni, facilis quibusdam! Quaerat dignissimos laborum alias dolores aspernatur deserunt quae possimus quia, fugiat cupiditate, delectus adipisci ipsa nisi suscipit!'
+        hu: 'A Késmárki szoftverfejlesztő Kft.-t bemutató honlap.',
+        en: 'The website of Késmárki Software Development Ltd.'
       },
       filesCount: 3,
       images: {
@@ -67,10 +63,8 @@ export const state = () => ({
         en: 'CNG Filling Station Ltd.'
       },
       description: {
-        hu:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse temporibus nam odit corporis eos voluptatibus quis obcaecati, sunt amet nemo similique debitis, nihil hic dignissimos optio mollitia sit natus modi.',
-        en:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse temporibus nam odit corporis eos voluptatibus quis obcaecati, sunt amet nemo similique debitis, nihil hic dignissimos optio mollitia sit natus modi.'
+        hu: 'A CNG Töltőállomás Kft.-t bemutató honlap.',
+        en: 'The website of CNG Filling Station Ltd.'
       },
       filesCount: 3,
       images: {
@@ -87,9 +81,9 @@ export const state = () => ({
       },
       description: {
         hu:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam possimus, cupiditate, laborum at similique, repudiandae temporibus tenetur molestias cumque itaque incidunt recusandae enim inventore voluptatem quae aspernatur consequuntur iusto provident.',
+          'Magyarország egyik legnagyobb cégkeresője, cégkivonat és cégtörténet adatbázisa.',
         en:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam possimus, cupiditate, laborum at similique, repudiandae temporibus tenetur molestias cumque itaque incidunt recusandae enim inventore voluptatem quae aspernatur consequuntur iusto provident.'
+          "One of Hungary's largest company registers, company extracts and company history database."
       },
       filesCount: 3,
       images: {
@@ -105,10 +99,9 @@ export const state = () => ({
         en: 'Transferprincing24'
       },
       description: {
-        hu:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias modi amet quidem animi, deleniti, cupiditate assumenda et neque ipsa maxime laudantium, sapiente odio impedit delectus quas commodi minima consectetur explicabo.',
+        hu: 'A ceginformacio.hu transzferár dokumentáció készítő weboldala.',
         en:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias modi amet quidem animi, deleniti, cupiditate assumenda et neque ipsa maxime laudantium, sapiente odio impedit delectus quas commodi minima consectetur explicabo.'
+          'The transfer pricing documentation creator website of ceginformacio.hu.'
       },
       filesCount: 3,
       images: {
@@ -125,9 +118,9 @@ export const state = () => ({
       },
       description: {
         hu:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores adipisci, quae, cumque pariatur cupiditate atque nobis, quas ratione sit et temporibus impedit. Incidunt in facilis ab minus laborum commodi libero.',
+          'A Magyar Faktorház ügyfélportálja, ami a Késmárki szoftverfejlesztő Kft. INDECS követeléskezelő rendszerével van összeköttetésben.',
         en:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores adipisci, quae, cumque pariatur cupiditate atque nobis, quas ratione sit et temporibus impedit. Incidunt in facilis ab minus laborum commodi libero.'
+          'The intranet portal of MFH (Hungarian Factoring House), which is connected to the INDECS debt collection system of Késmárki Software Development Ltd.'
       },
       filesCount: 3,
       images: {
@@ -143,10 +136,8 @@ export const state = () => ({
         en: 'Scafell Pike'
       },
       description: {
-        hu:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti soluta, enim iste saepe fugiat recusandae accusamus atque voluptate ducimus laudantium sint suscipit animi, praesentium neque deserunt culpa quas laboriosam necessitatibus.',
-        en:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti soluta, enim iste saepe fugiat recusandae accusamus atque voluptate ducimus laudantium sint suscipit animi, praesentium neque deserunt culpa quas laboriosam necessitatibus.'
+        hu: 'Anglia legmagasabb csúcsáról szóló weboldal / blog.',
+        en: "A website / blog about England's highest peak."
       },
       filesCount: 3,
       images: {

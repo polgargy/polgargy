@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <p>{{ ref.description[locale] }}</p>
+          <p v-if="ref.url">{{ ref.description[locale] }}</p>
 
           <p v-if="ref.url">
             <a

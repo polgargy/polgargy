@@ -82,3 +82,20 @@ Vue.prototype.$css = (el, styleName, styleValue) => {
     el.style.cssText = styleName + ': ' + styleValue + ';'
   }
 }
+
+// Add animation (animate.css)
+Vue.prototype.$animateElement = (el, animation, offset = 1) => {
+  const $el = document.querySelectorAll(el) // there could be more element
+
+  for (let i = 0; i < $el.length; i++) {
+    let { top, bottom } = $el[i].getBoundingClientRect()
+    let vHeight = window.innerHeight || document.documentElement.clientHeight
+
+    top = top * offset // offsetting
+
+    // If the $el is in the viewport (+ some offset in the previous line)
+    if ((top > 0 || bottom > 0) && top < vHeight) {
+      $el[i].classList.add(...['animated', animation])
+    }
+  }
+}

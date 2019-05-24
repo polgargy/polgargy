@@ -8,6 +8,50 @@ body.home {
     color: $white;
   }
 
+  // For animate.css
+  section.about .row,
+  section.services .row,
+  section.references .reference-item,
+  section.contact .row {
+    animation-duration: 1s;
+    opacity: 0;
+
+    &.animated {
+      opacity: 1;
+    }
+  }
+
+  // References are animated separately
+  section.references {
+    .reference-item {
+      &:first-of-type {
+        // animation-delay: 2s;
+      }
+
+      &:nth-of-type(2) {
+        animation-delay: .1s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: .2s;
+      }
+      &:nth-of-type(4) {
+        animation-delay: .3s;
+      }
+      &:nth-of-type(5) {
+        animation-delay: .4s;
+      }
+      &:nth-of-type(6) {
+        animation-delay: .5s;
+      }
+      &:nth-of-type(7) {
+        animation-delay: .6s;
+      }
+      &:last-of-type {
+        animation-delay: .7s;
+      }
+    }
+  }
+
   section.services {
     i {
       font-size: $h3-font-size;

@@ -148,6 +148,15 @@ export default {
     checkScroll() {
       if (this.$getScrollPos() > 0) {
         this.headerClass = 'sticky-header'
+
+        this.$animateElement('section.about .row', 'fadeIn', 2)
+        this.$animateElement('section.services .row', 'fadeInUp', 2)
+        this.$animateElement(
+          'section.references .reference-item',
+          'fadeIn',
+          1.2
+        )
+        this.$animateElement('section.contact .row', 'fadeInUp')
       } else {
         this.headerClass = ''
       }

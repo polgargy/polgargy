@@ -27,7 +27,6 @@
           v-for="(thumb, idx) in ref.images.thumbnails"
           :key="idx"
           class="reference-item col-12 col-sm mb-4">
-          <!-- FIXME alt -->
           <img
             :alt="ref.title[locale] + idx"
             :src="thumb"

@@ -1,5 +1,5 @@
 section#intro {
-  @include background('intro.jpg', true);
+  @include background('intro.jpg');
 
   color: $white;
 
@@ -15,3 +15,19 @@ section#intro {
     height: 300px;
   }
 }
+
+// >= 576px
+@include media-breakpoint-up(sm) {}
+
+// >= 768px
+@include media-breakpoint-up(md) {}
+
+// >= 992px
+@include media-breakpoint-up(lg) {
+  section#intro {
+    @include background('intro.jpg', true);
+  }
+}
+
+// >= 1200px
+@include media-breakpoint-up(xl) {}

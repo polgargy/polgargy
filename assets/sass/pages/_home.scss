@@ -16,6 +16,10 @@ body.home {
     animation-duration: 1s;
     opacity: 0;
 
+    @include ie() {
+      opacity: 1;
+    }
+
     &.animated {
       opacity: 1;
     }

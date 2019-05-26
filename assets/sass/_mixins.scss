@@ -28,6 +28,20 @@
   line-height: $height;
 }
 
+@mixin ie() {
+  // IE 10+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin edge() {
+  // Edge 12+
+  @supports (-ms-ime-align:auto) {
+    @content;
+  }
+}
+
 @mixin ie-edge() {
   // IE 10+
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

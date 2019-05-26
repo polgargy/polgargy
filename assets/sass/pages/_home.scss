@@ -104,12 +104,23 @@ body.home {
       font-size: $h4-font-size;
     }
 
-    p {
-      // font-size: $font-size-lg;
-      margin-bottom: 0;
+    // p {
+    //   // font-size: $font-size-lg;
+    //   margin-bottom: 0;
 
+    //   a {
+    //     color: $white;
+    //   }
+    // }
+
+    table {
       a {
         color: $white;
+      }
+
+      td:last-child() {
+        text-align: left;
+        padding-left: .5rem;
       }
     }
   }

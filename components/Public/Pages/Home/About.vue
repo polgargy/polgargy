@@ -5,7 +5,7 @@
 
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-8 offset-2 col-md-4 mb-4">
+        <div class="col-8 offset-2 col-lg-4 mb-4">
           <img
             src="~static/images/profile.jpg"
             alt="Profile"
@@ -13,7 +13,7 @@
         </div>
 
         <div
-          class="col-12 col-md"
+          class="col-12 col-lg"
           v-html="about.text[locale]"/>
       </div>
     </div>

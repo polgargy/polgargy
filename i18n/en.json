@@ -5,11 +5,13 @@
     "contact": "Contact"
   },
   "titles": {
+    "home": "Unique, secure, modern websites",
     "title": "György Polgár",
     "subtitle": "Web Developer",
     "references": "Some of my previous work"
   },
   "misc": {
-    "back": "Back"
+    "back": "Back",
+    "pageNotFound": "Page not found"
   }
 }

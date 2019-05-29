@@ -5,11 +5,13 @@
     "contact": "Kapcsolat"
   },
   "titles": {
+    "home": "Egyedi, biztonságos, modern weboldalak készítése",
     "title": "Polgár György",
     "subtitle": "Webfejlesztő",
     "references": "Néhány korábbi munkám"
   },
   "misc": {
-    "back": "Vissza"
+    "back": "Vissza",
+    "pageNotFound": "Az oldal nem található"
   }
 }

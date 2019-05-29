@@ -3,7 +3,7 @@ import webpack from 'webpack'
 require('dotenv').config()
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
   ** Headers of the page
@@ -49,7 +49,9 @@ module.exports = {
     '~plugins/common.js',
     '~plugins/filters.js',
     '~plugins/dom.js',
-    '~plugins/i18n.js'
+    '~plugins/i18n.js',
+    '~plugins/smoothscroll.client.js',
+    '~plugins/vuegallery.client.js'
   ],
 
   /*

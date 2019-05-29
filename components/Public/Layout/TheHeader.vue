@@ -97,7 +97,6 @@
 </template>
 
 <script>
-import SmoothScroll from 'smooth-scroll'
 
 export default {
   head() {
@@ -129,7 +128,7 @@ export default {
   created() {
     this.checkIfHomePage()
 
-    if (this.isHomePage) {
+    if (this.isHomePage && process.client) {
       new SmoothScroll('a[href*="#"]')
     }
   },

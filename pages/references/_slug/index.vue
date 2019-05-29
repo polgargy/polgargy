@@ -17,10 +17,12 @@
         </div>
       </div>
 
-      <gallery
-        :images="ref.images.originals"
-        :index="index"
-        @close="index = null"/>
+      <no-ssr>
+        <VueGallery
+          :images="ref.images.originals"
+          :index="index"
+          @close="index = null"/>
+      </no-ssr>
 
       <div class="row my-4">
         <div
@@ -49,12 +51,8 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import VueGallery from 'vue-gallery'
 
 export default {
-  components: {
-    gallery: VueGallery
-  },
   head() {
     return {
       bodyAttrs: {

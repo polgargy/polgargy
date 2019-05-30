@@ -12,7 +12,7 @@ module.exports = {
     htmlAttrs: {
       lang: 'hu'
     },
-    title: process.env.APP_NAME,
+    title: process.env.APP_TITLE,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -100,6 +100,7 @@ module.exports = {
     ]
   },
   env: {
+    defaultLocale: process.env.DEFAULT_LOCALE,
     refPath: process.env.REF_PATH
   },
   generate: {

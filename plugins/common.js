@@ -56,6 +56,22 @@ export default ({ app }, inject) => {
     return match && match.length > 1 ? match[1] : null
   })
 
+  // inject('getDefaultLocale', key => {
+  //   if (process.client) {
+  //     const url = window.location.host
+  //     const parts = url.split('.')
+  //     const subdomain = parts[0]
+
+  //     const locale = subdomain === 'en' ? 'en' : 'hu'
+
+  //     app.$setStoredItem('selectedLang', locale)
+
+  //     return locale
+  //   } else {
+  //     return process.env.defaultLocale
+  //   }
+  // })
+
   inject('toastr', message => {
     if (message.type === 'success') {
       toastr.success(message.text)

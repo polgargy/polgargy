@@ -55,6 +55,12 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   head() {
     return {
+      title:
+        this.ref.title[this.locale] +
+        ' | ' +
+        this.$t('titles.title') +
+        ' - ' +
+        this.$t('titles.subtitle'),
       bodyAttrs: {
         class: 'reference'
       }
@@ -74,12 +80,18 @@ export default {
     }
   },
   created() {
-    this.fetchRef(this.$route.params.slug)
+    // this.fetchRef(this.$route.params.slug)
+    //
+    // In order to use this.ref in the head(),
+    // this have to be async, because if I change the lang on the home and then visit a reference page, it throws an error
   },
   methods: {
-    ...mapActions({
-      fetchRef: 'references/fetchOne'
-    })
+    // ...mapActions({
+    //   fetchRef: 'references/fetchOne'
+    // })
+  },
+  async fetch({ store, params }) {
+    await store.dispatch('references/fetchOne', params.slug)
   }
 }
 </script>

@@ -1,4 +1,22 @@
 export const state = () => ({
+  meta: {
+    title: {
+      hu: 'Egyedi, biztonságos, modern weboldalak készítése | Polgár György',
+      en: 'Unique, secure, modern websites | György Polgár'
+    },
+    description: {
+      hu:
+        'Modern weboldalak fejlesztése kedvező áron. Több éves szakmai tapasztalattal rendelkező webfejlesztőként bízom benne, hogy segíteni tudok önnek.',
+      en:
+        'Development of modern websites at a reasonable price. As a web developer with years of professional experience, I believe I can help you.'
+    },
+    keywords: {
+      hu:
+        'Webfejlesztő, Webfejlesztés, Weboldal készítés, Weblap készítés, Honlap készítés, Weboldal, Honlap, Domain, Tárhely, Pest megye, Vác, Dunakeszi, Göd, Pest, Budapest, Javascript, Vue.js, Nuxt.js, PHP, Laravel',
+      en:
+        'Web developer, Web development, Website creation, Website, Domain, Hosting, Hungary, Hungarian, Javascript, Vue.js, Nuxt.js, PHP, Laravel'
+    }
+  },
   about: {
     text: {
       hu:
@@ -47,6 +65,9 @@ export const mutations = {}
 export const actions = {}
 
 export const getters = {
+  getMeta(state) {
+    return state.meta
+  },
   getAbout(state) {
     return state.about
   },

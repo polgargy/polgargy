@@ -160,7 +160,7 @@ export default {
       }
     },
     changeLang(lang) {
-      localStorage.setItem('selectedLang', lang)
+      this.$setStoredItem('selectedLang', lang)
       this.$i18n.locale = lang
     }
   }

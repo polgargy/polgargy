@@ -7,7 +7,7 @@ export default ({ app, req }) => {
   app.i18n = new VueI18n({
     locale: app.$getStoredItem('selectedLang')
       ? app.$getStoredItem('selectedLang')
-      : 'hu',
+      : process.env.defaultLocale,
     // locale: 'hu',
     fallbackLocale: 'hu',
     messages: {

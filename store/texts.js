@@ -53,9 +53,8 @@ export const state = () => ({
   ],
   contact: {
     text: {
-      hu:
-        'Amennyiben felkeltettem az érdeklődését, árajánlatkéréshez kérem keressen a következő elérhetőségeken',
-      en: 'In case you are interested, please contact me for quotation'
+      hu: 'Árajánlatkéréshez kérem keressen a következő elérhetőségeken',
+      en: 'Please contact me for quotation'
     }
   }
 })

@@ -1,19 +1,19 @@
 export const state = () => ({
   references: [
     {
-      slug: 'borsanyizsuzsanna',
-      url: 'https://borsanyizsuzsanna.com',
+      slug: 'ceginformacio',
+      url: 'https://ceginformacio.hu',
       title: {
-        hu: 'Borsányi Zsuzsanna',
-        en: 'Zsuzsanna Borsányi'
+        hu: 'Céginformáció',
+        en: 'Céginformáció - Company Register'
       },
       description: {
-        hu: 'Borsányi Zsuzsanna portfólió weboldala.',
-        en: "Zsuzsanna Borsányi's portfolio website."
+        hu:
+          'Magyarország egyik legnagyobb cégkeresője, cégkivonat és cégtörténet adatbázisa.',
+        en:
+          "One of Hungary's largest company registers, company extracts and company history database."
       },
       filesCount: 3,
-      // VueGallery needs one (in this case two... original + thumb) arrays (with the same sizes)
-      // so they're going to be set in mutSetReference mutation:
       images: {
         thumbnails: [],
         originals: []
@@ -33,6 +33,25 @@ export const state = () => ({
           'The intranet portal of OTP Banka (Croatia), which is connected to the INDECS debt collection system of Késmárki Software Development Ltd.'
       },
       filesCount: 3,
+      images: {
+        thumbnails: [],
+        originals: []
+      }
+    },
+    {
+      slug: 'borsanyizsuzsanna',
+      url: 'https://borsanyizsuzsanna.com',
+      title: {
+        hu: 'Borsányi Zsuzsanna',
+        en: 'Zsuzsanna Borsányi'
+      },
+      description: {
+        hu: 'Borsányi Zsuzsanna portfólió weboldala.',
+        en: "Zsuzsanna Borsányi's portfolio website."
+      },
+      filesCount: 3,
+      // VueGallery needs one (in this case two... original + thumb) arrays (with the same sizes)
+      // so they're going to be set in mutSetReference mutation:
       images: {
         thumbnails: [],
         originals: []
@@ -65,25 +84,6 @@ export const state = () => ({
       description: {
         hu: 'A CNG Töltőállomás Kft.-t bemutató honlap.',
         en: 'The website of CNG Filling Station Ltd.'
-      },
-      filesCount: 3,
-      images: {
-        thumbnails: [],
-        originals: []
-      }
-    },
-    {
-      slug: 'ceginformacio',
-      url: 'https://ceginformacio.hu',
-      title: {
-        hu: 'Céginformáció',
-        en: 'Céginformáció - Company Register'
-      },
-      description: {
-        hu:
-          'Magyarország egyik legnagyobb cégkeresője, cégkivonat és cégtörténet adatbázisa.',
-        en:
-          "One of Hungary's largest company registers, company extracts and company history database."
       },
       filesCount: 3,
       images: {

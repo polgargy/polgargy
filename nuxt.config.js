@@ -1,8 +1,8 @@
-const pkg = require('./package')
+// const pkg = require('./package')
 import webpack from 'webpack'
 require('dotenv').config()
 
-module.exports = {
+export default {
   mode: 'universal',
 
   /*

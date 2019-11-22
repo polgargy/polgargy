@@ -1,8 +1,5 @@
 <template>
-  <section
-    id="references"
-    class="references">
-
+  <section id="references" class="references">
     <h3>{{ $t('titles.references') }}</h3>
 
     <div class="container-fluid">
@@ -10,15 +7,14 @@
         <div
           v-for="r in references"
           :key="r.id"
-          class="reference-item col-12 col-sm-6 col-md-3 text-center">
-
-          <nuxt-link
-            :to="'/references/' + r.slug">
-
+          class="reference-item col-12 col-sm-6 col-md-3 text-center"
+        >
+          <nuxt-link :to="'/references/' + r.slug">
             <img
               :alt="r.title[locale]"
               :src="refPath + r.slug + '/thumb1.png'"
-              class="img-fluid">
+              class="img-fluid"
+            />
 
             <h4>{{ r.title[locale] }}</h4>
           </nuxt-link>

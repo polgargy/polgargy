@@ -1,19 +1,8 @@
 <template>
-  <header
-    :class="headerClass"
-    class="fixed-top">
-    <nav
-      id="navbar"
-      class="navbar navbar-expand-lg navbar-dark">
-
-      <nuxt-link
-        to="/"
-        class="navbar-brand"
-        href="#">
-        <img
-          src="~static/images/logo.svg"
-          alt="Logo"
-          class="img-fluid logo">
+  <header :class="headerClass" class="fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+      <nuxt-link to="/" class="navbar-brand" href="#">
+        <img src="~static/images/logo.svg" alt="Logo" class="img-fluid logo" />
       </nuxt-link>
       <button
         class="navbar-toggler"
@@ -22,20 +11,17 @@
         data-target="#navbar-content"
         aria-controls="navbar-content"
         aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"/>
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon" />
       </button>
 
-      <div
-        id="navbar-content"
-        class="collapse navbar-collapse">
+      <div id="navbar-content" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <!-- Home page -->
           <template v-if="isHomePage">
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#about">
+              <a class="nav-link" href="#about">
                 {{ $t('routes.about') }}
               </a>
             </li>
@@ -49,17 +35,13 @@
             </li> -->
 
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#references">
+              <a class="nav-link" href="#references">
                 {{ $t('routes.references') }}
               </a>
             </li>
 
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#contact">
+              <a class="nav-link" href="#contact">
                 {{ $t('routes.contact') }}
               </a>
             </li>
@@ -75,19 +57,20 @@
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
-              aria-expanded="false">
+              aria-expanded="false"
+            >
               {{ locale | uppercase }}
             </a>
-            <div
-              class="dropdown-menu"
-              aria-labelledby="lang-switch">
+            <div class="dropdown-menu" aria-labelledby="lang-switch">
               <a
                 v-for="lang in langs"
                 :key="lang.id"
                 :class="lang === locale ? 'active' : ''"
+                @click.prevent="changeLang(lang)"
                 class="dropdown-item"
                 href="#"
-                @click.prevent="changeLang(lang)">{{ lang | uppercase }}</a>
+                >{{ lang | uppercase }}</a
+              >
             </div>
           </li>
         </ul>
@@ -120,18 +103,18 @@ export default {
     }
   },
   watch: {
-    $route: function() {
+    $route() {
       this.checkIfHomePage()
     }
   },
   created() {
     this.checkIfHomePage()
-
-    if (this.isHomePage && process.client) {
-      new SmoothScroll('a[href*="#"]')
-    }
   },
   mounted() {
+    if (this.isHomePage) {
+      window.SmoothScroll('a[href*="#"]')
+    }
+
     this.checkScroll()
     this.$addEvent('scroll', this.checkScroll)
   },

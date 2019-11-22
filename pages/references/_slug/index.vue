@@ -1,6 +1,5 @@
 <template>
   <section id="reference">
-
     <h3>{{ ref.title[locale] }}</h3>
 
     <div class="container">
@@ -9,39 +8,38 @@
           <p v-if="ref.description">{{ ref.description[locale] }}</p>
 
           <p v-if="ref.url">
-            <a
-              :href="ref.url"
-              target="_blank">{{ ref.url }}
-            </a>
+            <a :href="ref.url" target="_blank">{{ ref.url }} </a>
           </p>
         </div>
       </div>
 
-      <no-ssr>
+      <client-only>
         <VueGallery
           :images="ref.images.originals"
           :index="index"
-          @close="index = null"/>
-      </no-ssr>
+          @close="index = null"
+        />
+      </client-only>
 
       <div class="row my-4">
         <div
           v-for="(thumb, idx) in ref.images.thumbnails"
           :key="idx"
-          class="reference-item col-12 col-sm mb-4">
+          class="reference-item col-12 col-sm mb-4"
+        >
           <img
             :alt="ref.title[locale] + idx"
             :src="thumb"
+            @click="index = idx"
             class="img-fluid"
-            @click="index = idx">
+          />
         </div>
       </div>
 
       <div class="row">
         <div class="col">
-          <nuxt-link
-            to="/"
-            class="btn btn-primary"><i class="fas fa-chevron-left"/> {{ $t('misc.back') }}
+          <nuxt-link to="/" class="btn btn-primary"
+            ><i class="fas fa-chevron-left" /> {{ $t('misc.back') }}
           </nuxt-link>
         </div>
       </div>
@@ -50,7 +48,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   head() {
@@ -79,6 +77,9 @@ export default {
       return this.$i18n.locale
     }
   },
+  async fetch({ store, params }) {
+    await store.dispatch('references/fetchOne', params.slug)
+  },
   created() {
     // this.fetchRef(this.$route.params.slug)
     //
@@ -89,9 +90,6 @@ export default {
     // ...mapActions({
     //   fetchRef: 'references/fetchOne'
     // })
-  },
-  async fetch({ store, params }) {
-    await store.dispatch('references/fetchOne', params.slug)
   }
 }
 </script>

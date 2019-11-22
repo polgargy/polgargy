@@ -1,7 +1,5 @@
 <template>
-  <section
-    id="contact"
-    class="contact">
+  <section id="contact" class="contact">
     <h3>{{ contact.text[locale] }}</h3>
 
     <div class="container">
@@ -11,7 +9,7 @@
             <tbody>
               <tr>
                 <td>
-                  <i class="fas fa-envelope"/>
+                  <i class="fas fa-envelope" />
                 </td>
                 <td>
                   <a href="mailto:info@polgargy.hu">info@polgargy.hu</a>
@@ -19,22 +17,22 @@
               </tr>
               <tr>
                 <td>
-                  <i class="fab fa-linkedin"/>
+                  <i class="fab fa-linkedin" />
                 </td>
                 <td>
-                  <a
-                    href="https://www.linkedin.com/in/polgargy"
-                    target="_blank">LinkedIn</a>
+                  <a href="https://www.linkedin.com/in/polgargy" target="_blank"
+                    >LinkedIn</a
+                  >
                 </td>
               </tr>
               <tr>
                 <td>
-                  <i class="fab fa-facebook-square"/>
+                  <i class="fab fa-facebook-square" />
                 </td>
                 <td>
-                  <a
-                    href="https://www.facebook.com/polgargy.hu"
-                    target="_blank">Facebook</a>
+                  <a href="https://www.facebook.com/polgargy.hu" target="_blank"
+                    >Facebook</a
+                  >
                 </td>
               </tr>
             </tbody>

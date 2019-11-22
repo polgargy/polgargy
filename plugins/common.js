@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import Cookie from 'js-cookie'
 
 export default ({ app }, inject) => {
@@ -25,7 +24,7 @@ export default ({ app }, inject) => {
   })
 
   // Get Cookie or localStorage item
-  inject('getStoredItem', key => {
+  inject('getStoredItem', (key) => {
     if (process.client) {
       return localStorage.getItem(key)
     } else {
@@ -39,7 +38,7 @@ export default ({ app }, inject) => {
     if (req && req.headers.cookie) {
       const cookie = req.headers.cookie
         .split(';') // separated by ";"
-        .find(c => c.trim().startsWith(key + '='))
+        .find((c) => c.trim().startsWith(key + '='))
 
       if (cookie) {
         ret = cookie.split('=')[1]
@@ -49,7 +48,7 @@ export default ({ app }, inject) => {
     return ret
   })
 
-  inject('getUrlParam', paramName => {
+  inject('getUrlParam', (paramName) => {
     // var reParam = new RegExp('(?:[\?&]|&)' + paramName + '=([^&]+)', 'i')
     const reParam = new RegExp('(?:[?&]|&)' + paramName + '=([^&]+)', 'i')
     const match = window.location.search.match(reParam)
@@ -71,20 +70,4 @@ export default ({ app }, inject) => {
   //     return process.env.defaultLocale
   //   }
   // })
-
-  inject('toastr', message => {
-    if (message.type === 'success') {
-      toastr.success(message.text)
-    } else if (message.type === 'warning') {
-      toastr.warning(message.text)
-    } else if (message.type === 'danger') {
-      if (message.errors.length > 0) {
-        for (let i = 0; i < message.errors.length; i++) {
-          toastr.error(message.errors[i])
-        }
-      } else {
-        toastr.error(message.text)
-      }
-    }
-  })
 }

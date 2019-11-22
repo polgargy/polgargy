@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 // Select an element
-Vue.prototype.$$ = el => {
+Vue.prototype.$$ = (el) => {
   if (process.client) {
     return document.querySelector(el)
   }
@@ -11,7 +11,6 @@ Vue.prototype.$$ = el => {
 Vue.prototype.$addEvent = (event, method) => {
   if (process.client) {
     window.addEventListener(event, method)
-    return
   }
 }
 
@@ -88,8 +87,11 @@ Vue.prototype.$animateElement = (el, animation, offset = 1) => {
   const $el = document.querySelectorAll(el) // there could be more element
 
   for (let i = 0; i < $el.length; i++) {
-    let { top, bottom } = $el[i].getBoundingClientRect()
-    let vHeight = window.innerHeight || document.documentElement.clientHeight
+    const boundingClientRect = $el[i].getBoundingClientRect()
+    let top = boundingClientRect.top
+    const bottom = boundingClientRect.bottom
+
+    const vHeight = window.innerHeight || document.documentElement.clientHeight
 
     top = top * offset // offsetting
 

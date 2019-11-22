@@ -172,7 +172,7 @@ export const mutations = {
 export const actions = {
   fetchOne(vuexContext, slug) {
     const references = vuexContext.state.references
-    const reference = references.filter(obj => {
+    const reference = references.filter((obj) => {
       return obj.slug === slug
     })
 

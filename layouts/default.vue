@@ -1,26 +1,26 @@
 <template>
   <div class="app-wrapper">
-    <TheHeader/>
-    <TheIntro/>
+    <TheHeader />
+    <TheIntro />
 
     <main>
-      <nuxt/>
+      <nuxt />
     </main>
 
-    <TheFooter/>
+    <TheFooter />
   </div>
 </template>
 
 <script>
-if (process.client) {
-  require('bootstrap')
-}
-
 import { mapGetters } from 'vuex'
 
 import TheHeader from '@/components/Public/Layout/TheHeader.vue'
 import TheIntro from '@/components/Public/Layout/TheIntro.vue'
 import TheFooter from '@/components/Public/Layout/TheFooter.vue'
+
+if (process.client) {
+  require('bootstrap')
+}
 
 export default {
   components: {

@@ -1,16 +1,4 @@
 {
-  "routes": {
-    "about": "Rólam",
-    "references": "Referenciák",
-    "contact": "Kapcsolat"
-  },
-  "titles": {
-    "title": "Polgár György",
-    "subtitle": "Webfejlesztő",
-    "references": "Néhány korábbi munkám"
-  },
-  "misc": {
-    "back": "Vissza",
-    "pageNotFound": "Az oldal nem található"
-  }
+  "back": "Vissza",
+  "pageNotFound": "Az oldal nem található"
 }

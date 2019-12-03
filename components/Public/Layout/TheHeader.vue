@@ -20,29 +20,9 @@
         <ul class="navbar-nav ml-auto">
           <!-- Home page -->
           <template v-if="isHomePage">
-            <li class="nav-item">
-              <a class="nav-link" href="#about">
-                {{ $t('routes.about') }}
-              </a>
-            </li>
-
-            <!-- <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#services">
-                {{ $t('routes.services') }}
-              </a>
-            </li> -->
-
-            <li class="nav-item">
-              <a class="nav-link" href="#references">
-                {{ $t('routes.references') }}
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">
-                {{ $t('routes.contact') }}
+            <li v-for="(navItem, idx) in nav" :key="idx" class="nav-item">
+              <a :href="`#${navItem.slug}`" class="nav-link">
+                {{ navItem[`title_${locale}`] }}
               </a>
             </li>
           </template>
@@ -63,8 +43,8 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="lang-switch">
               <a
-                v-for="lang in langs"
-                :key="lang.id"
+                v-for="(lang, idx) in langs"
+                :key="idx"
                 :class="lang === locale ? 'active' : ''"
                 @click.prevent="changeLang(lang)"
                 class="dropdown-item"
@@ -80,6 +60,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   head() {
     return {
@@ -98,6 +80,9 @@ export default {
     }
   },
   computed: {
+    ...mapGetters({
+      nav: 'texts/getNav'
+    }),
     locale() {
       return this.$i18n.locale
     }

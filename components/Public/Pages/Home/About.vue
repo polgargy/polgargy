@@ -4,13 +4,13 @@
       <div class="row align-items-center">
         <div class="col-8 offset-2 col-lg-4 mb-4">
           <img
-            src="~static/images/profile.jpg"
-            alt="Profile"
+            :src="about.profile_pic.url"
+            :alt="about.profile_pic.title"
             class="img-fluid shadow"
           />
         </div>
 
-        <div v-html="about.text[locale]" class="col-12 col-lg" />
+        <div v-html="about[`content_${locale}`]" class="col-12 col-lg" />
       </div>
     </div>
   </section>

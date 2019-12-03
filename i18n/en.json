@@ -1,16 +1,4 @@
 {
-  "routes": {
-    "about": "About",
-    "references": "References",
-    "contact": "Contact"
-  },
-  "titles": {
-    "title": "György Polgár",
-    "subtitle": "Web Developer",
-    "references": "Some of my previous work"
-  },
-  "misc": {
-    "back": "Back",
-    "pageNotFound": "Page not found"
-  }
+  "back": "Back",
+  "pageNotFound": "Page not found"
 }

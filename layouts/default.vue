@@ -30,17 +30,17 @@ export default {
   },
   head() {
     return {
-      title: this.meta.title[this.locale],
+      title: this.meta[`meta_title_${this.locale}`],
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.meta.description[this.locale]
+          content: this.meta[`meta_description_${this.locale}`]
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: this.meta.keywords[this.locale]
+          content: this.meta[`meta_keywords_str_${this.locale}`]
         }
       ]
     }

@@ -10,14 +10,11 @@ export default {
   */
   head: {
     htmlAttrs: {
-      lang: 'hu'
+      lang: process.env.DEFAULT_LOCALE
     },
-    title: process.env.APP_TITLE,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.APP_DESCRIPTION },
-      { hid: 'keywords', name: 'keywords', content: process.env.APP_KEYWORDS }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -67,15 +64,21 @@ export default {
   */
   modules: [,
     // Doc: https://bootstrap-vue.js.org/docs/
+    '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics'
   ],
+
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+    baseURL: process.env.API_BASE_URL
+  },
 
   googleAnalytics: {
     id: process.env.ANALYTICS,
   },
 
-  transition: {
+  pageTransition: {
     name: 'page',
     mode: 'out-in'
   },
@@ -111,8 +114,8 @@ export default {
     ]
   },
   env: {
-    defaultLocale: process.env.DEFAULT_LOCALE,
-    refPath: process.env.REF_PATH
+    apiHomeId: process.env.API_HOME_ID,
+    defaultLocale: process.env.DEFAULT_LOCALE
   },
   generate: {
     routes: function() {

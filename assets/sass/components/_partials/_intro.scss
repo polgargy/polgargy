@@ -1,5 +1,6 @@
 section#intro {
-  @include background('intro-sm.jpg');
+  background-size: cover;
+  background-position: center;
 
   color: $white;
 
@@ -25,7 +26,7 @@ section#intro {
 // >= 992px
 @include media-breakpoint-up(lg) {
   section#intro {
-    @include background('intro.jpg', true);
+    background-attachment: fixed;
   }
 }
 

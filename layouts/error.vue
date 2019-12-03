@@ -23,9 +23,9 @@
       </p> -->
 
       <div v-if="statusCode === 404">
-        <div class="title">{{ $t('misc.pageNotFound') }}</div>
+        <div class="title">{{ $t('pageNotFound') }}</div>
         <p class="description">
-          <nuxt-link class="error-link" to="/">{{ $t('misc.back') }}</nuxt-link>
+          <nuxt-link class="error-link" to="/">{{ $t('back') }}</nuxt-link>
         </p>
       </div>
 

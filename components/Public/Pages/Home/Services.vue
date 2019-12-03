@@ -3,12 +3,12 @@
     <div class="container">
       <div class="row">
         <div
-          v-for="s in services"
-          :key="s.id"
+          v-for="(s, idx) in services.services"
+          :key="idx"
           class="col-12 col-md text-center mb-4"
         >
-          <i :class="s.icon" class="mb-4" />
-          <p>{{ s.text[locale] }}</p>
+          <i :class="s.icon.class" class="mb-4" />
+          <p>{{ s[`title_${locale}`] }}</p>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
   <header :class="headerClass" class="fixed-top">
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
       <nuxt-link to="/" class="navbar-brand" href="#">
-        <img src="~static/images/logo.svg" alt="Logo" class="img-fluid logo" />
+        <img :src="logoUrl" alt="Logo" class="img-fluid logo" />
       </nuxt-link>
       <button
         class="navbar-toggler"
@@ -76,6 +76,7 @@ export default {
     return {
       isHomePage: true,
       headerClass: '',
+      logoUrl: `${process.env.apiBaseUrl}/wp-content/uploads/logo.svg`,
       langs: ['hu', 'en']
     }
   },

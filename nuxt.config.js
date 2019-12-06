@@ -71,7 +71,7 @@ export default {
 
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: process.env.API_BASE_URL
+    baseURL: `${process.env.API_BASE_URL}/wp-json`
   },
 
   googleAnalytics: {
@@ -115,7 +115,8 @@ export default {
   },
   env: {
     apiHomeId: process.env.API_HOME_ID,
-    defaultLocale: process.env.DEFAULT_LOCALE
+    defaultLocale: process.env.DEFAULT_LOCALE,
+    apiBaseUrl: process.env.API_BASE_URL
   },
   generate: {
     routes: function() {

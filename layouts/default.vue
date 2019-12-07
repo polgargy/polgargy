@@ -1,26 +1,26 @@
 <template>
   <div class="app-wrapper">
-    <TheHeader/>
-    <TheIntro/>
+    <TheHeader />
+    <TheIntro />
 
     <main>
-      <nuxt/>
+      <nuxt />
     </main>
 
-    <TheFooter/>
+    <TheFooter />
   </div>
 </template>
 
 <script>
-if (process.client) {
-  require('bootstrap')
-}
-
 import { mapGetters } from 'vuex'
 
 import TheHeader from '@/components/Public/Layout/TheHeader.vue'
 import TheIntro from '@/components/Public/Layout/TheIntro.vue'
 import TheFooter from '@/components/Public/Layout/TheFooter.vue'
+
+if (process.client) {
+  require('bootstrap')
+}
 
 export default {
   components: {
@@ -30,17 +30,17 @@ export default {
   },
   head() {
     return {
-      title: this.meta.title[this.locale],
+      title: this.meta[`meta_title_${this.locale}`],
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.meta.description[this.locale]
+          content: this.meta[`meta_description_${this.locale}`]
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: this.meta.keywords[this.locale]
+          content: this.meta[`meta_keywords_str_${this.locale}`]
         }
       ]
     }

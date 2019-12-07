@@ -1,20 +1,16 @@
 <template>
-  <section
-    id="about"
-    class="about">
-
+  <section id="about" class="about">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-8 offset-2 col-lg-4 mb-4">
           <img
-            src="~static/images/profile.jpg"
-            alt="Profile"
-            class="img-fluid shadow">
+            :src="about.profile_pic.url"
+            :alt="about.profile_pic.title"
+            class="img-fluid shadow"
+          />
         </div>
 
-        <div
-          class="col-12 col-lg"
-          v-html="about.text[locale]"/>
+        <div v-html="about[`content_${locale}`]" class="col-12 col-lg" />
       </div>
     </div>
   </section>

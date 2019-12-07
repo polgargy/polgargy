@@ -1,19 +1,8 @@
 <template>
-  <header
-    :class="headerClass"
-    class="fixed-top">
-    <nav
-      id="navbar"
-      class="navbar navbar-expand-lg navbar-dark">
-
-      <nuxt-link
-        to="/"
-        class="navbar-brand"
-        href="#">
-        <img
-          src="~static/images/logo.svg"
-          alt="Logo"
-          class="img-fluid logo">
+  <header :class="headerClass" class="fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+      <nuxt-link to="/" class="navbar-brand" href="#">
+        <img :src="logoUrl" alt="Logo" class="img-fluid logo" />
       </nuxt-link>
       <button
         class="navbar-toggler"
@@ -22,45 +11,18 @@
         data-target="#navbar-content"
         aria-controls="navbar-content"
         aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"/>
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon" />
       </button>
 
-      <div
-        id="navbar-content"
-        class="collapse navbar-collapse">
+      <div id="navbar-content" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <!-- Home page -->
           <template v-if="isHomePage">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#about">
-                {{ $t('routes.about') }}
-              </a>
-            </li>
-
-            <!-- <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#services">
-                {{ $t('routes.services') }}
-              </a>
-            </li> -->
-
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#references">
-                {{ $t('routes.references') }}
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#contact">
-                {{ $t('routes.contact') }}
+            <li v-for="(navItem, idx) in nav" :key="idx" class="nav-item">
+              <a :href="`#${navItem.slug}`" class="nav-link">
+                {{ navItem[`title_${locale}`] }}
               </a>
             </li>
           </template>
@@ -75,19 +37,20 @@
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
-              aria-expanded="false">
+              aria-expanded="false"
+            >
               {{ locale | uppercase }}
             </a>
-            <div
-              class="dropdown-menu"
-              aria-labelledby="lang-switch">
+            <div class="dropdown-menu" aria-labelledby="lang-switch">
               <a
-                v-for="lang in langs"
-                :key="lang.id"
+                v-for="(lang, idx) in langs"
+                :key="idx"
                 :class="lang === locale ? 'active' : ''"
+                @click.prevent="changeLang(lang)"
                 class="dropdown-item"
                 href="#"
-                @click.prevent="changeLang(lang)">{{ lang | uppercase }}</a>
+                >{{ lang | uppercase }}</a
+              >
             </div>
           </li>
         </ul>
@@ -97,6 +60,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   head() {
     return {
@@ -111,27 +76,31 @@ export default {
     return {
       isHomePage: true,
       headerClass: '',
+      logoUrl: `${process.env.apiBaseUrl}/wp-content/uploads/logo.svg`,
       langs: ['hu', 'en']
     }
   },
   computed: {
+    ...mapGetters({
+      nav: 'texts/getNav'
+    }),
     locale() {
       return this.$i18n.locale
     }
   },
   watch: {
-    $route: function() {
+    $route() {
       this.checkIfHomePage()
     }
   },
   created() {
     this.checkIfHomePage()
-
-    if (this.isHomePage && process.client) {
-      new SmoothScroll('a[href*="#"]')
-    }
   },
   mounted() {
+    if (this.isHomePage) {
+      window.SmoothScroll('a[href*="#"]')
+    }
+
     this.checkScroll()
     this.$addEvent('scroll', this.checkScroll)
   },

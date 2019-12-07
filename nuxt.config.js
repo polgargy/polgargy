@@ -1,8 +1,8 @@
-const pkg = require('./package')
+// const pkg = require('./package')
 import webpack from 'webpack'
 require('dotenv').config()
 
-module.exports = {
+export default {
   mode: 'universal',
 
   /*
@@ -10,14 +10,11 @@ module.exports = {
   */
   head: {
     htmlAttrs: {
-      lang: 'hu'
+      lang: process.env.DEFAULT_LOCALE
     },
-    title: process.env.APP_TITLE,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.APP_DESCRIPTION },
-      { hid: 'keywords', name: 'keywords', content: process.env.APP_KEYWORDS }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -55,19 +52,33 @@ module.exports = {
   ],
 
   /*
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module'
+  ],
+
+  /*
   ** Nuxt.js modules
   */
   modules: [,
     // Doc: https://bootstrap-vue.js.org/docs/
+    '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics'
   ],
+
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+    baseURL: `${process.env.API_BASE_URL}/wp-json`
+  },
 
   googleAnalytics: {
     id: process.env.ANALYTICS,
   },
 
-  transition: {
+  pageTransition: {
     name: 'page',
     mode: 'out-in'
   },
@@ -86,7 +97,10 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
         })
       }
     },
@@ -100,8 +114,9 @@ module.exports = {
     ]
   },
   env: {
+    apiHomeId: process.env.API_HOME_ID,
     defaultLocale: process.env.DEFAULT_LOCALE,
-    refPath: process.env.REF_PATH
+    apiBaseUrl: process.env.API_BASE_URL
   },
   generate: {
     routes: function() {

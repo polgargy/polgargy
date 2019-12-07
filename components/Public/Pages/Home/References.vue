@@ -1,26 +1,22 @@
 <template>
-  <section
-    id="references"
-    class="references">
-
-    <h3>{{ $t('titles.references') }}</h3>
+  <section id="references" class="references">
+    <h3>{{ referencesText[`title_${locale}`] }}</h3>
 
     <div class="container-fluid">
       <div class="row">
         <div
-          v-for="r in references"
-          :key="r.id"
-          class="reference-item col-12 col-sm-6 col-md-3 text-center">
-
-          <nuxt-link
-            :to="'/references/' + r.slug">
-
+          v-for="(r, idx) in references"
+          :key="idx"
+          class="reference-item col-12 col-sm-6 col-md-3 text-center"
+        >
+          <nuxt-link :to="'/references/' + r.slug">
             <img
-              :alt="r.title[locale]"
-              :src="refPath + r.slug + '/thumb1.png'"
-              class="img-fluid">
+              :alt="r[`title_${locale}`]"
+              :src="r.screens[0].thumbnail.url"
+              class="img-fluid"
+            />
 
-            <h4>{{ r.title[locale] }}</h4>
+            <h4>{{ r[`title_${locale}`] }}</h4>
           </nuxt-link>
         </div>
       </div>
@@ -32,13 +28,9 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  data() {
-    return {
-      refPath: process.env.refPath
-    }
-  },
   computed: {
     ...mapGetters({
+      referencesText: 'texts/getReferences',
       references: 'references/getAll'
     }),
     locale() {

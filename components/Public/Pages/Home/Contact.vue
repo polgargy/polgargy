@@ -1,40 +1,20 @@
 <template>
-  <section
-    id="contact"
-    class="contact">
-    <h3>{{ contact.text[locale] }}</h3>
+  <section id="contact" class="contact">
+    <h3>{{ contact[`title_${locale}`] }}</h3>
 
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-auto text-center">
           <table>
             <tbody>
-              <tr>
+              <tr v-for="(contact, idx) in contact.contacts" :key="idx">
                 <td>
-                  <i class="fas fa-envelope"/>
+                  <i :class="contact.icon.class" />
                 </td>
                 <td>
-                  <a href="mailto:info@polgargy.hu">info@polgargy.hu</a>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i class="fab fa-linkedin"/>
-                </td>
-                <td>
-                  <a
-                    href="https://www.linkedin.com/in/polgargy"
-                    target="_blank">LinkedIn</a>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <i class="fab fa-facebook-square"/>
-                </td>
-                <td>
-                  <a
-                    href="https://www.facebook.com/polgargy.hu"
-                    target="_blank">Facebook</a>
+                  <a :href="contact.link" target="_blank">{{
+                    contact.title
+                  }}</a>
                 </td>
               </tr>
             </tbody>

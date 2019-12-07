@@ -8,6 +8,8 @@ section#intro {
     background: rgba(10,10,10, .7);
   }
 
+  transition: height .2s;
+
   body.home & {
     height: 600px;
   }

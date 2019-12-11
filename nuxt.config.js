@@ -65,10 +65,18 @@ export default {
   */
   modules: [,
     // Doc: https://bootstrap-vue.js.org/docs/
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/style-resources',
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics'
   ],
+
+  styleResources: {
+    scss: [
+      '~assets/sass/_bootstrap.scss'
+    ]
+  },
 
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
@@ -104,15 +112,7 @@ export default {
           }
         })
       }
-    },
-    plugins: [
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        'moment': 'moment'
-      })
-    ]
+    }
   },
   env: {
     apiHomeId: process.env.API_HOME_ID,

@@ -1,6 +1,7 @@
 // const pkg = require('./package')
 import webpack from 'webpack'
 require('dotenv').config()
+const axios = require('axios')
 
 export default {
   mode: 'universal',
@@ -121,33 +122,14 @@ export default {
   generate: {
     routes: function() {
       // Fetch all of the dynamic routes:
-      const routes = [
-        '/references/borsanyizsuzsanna',
-        '/references/otpbanka',
-        '/references/kesmarki',
-        '/references/cngtoltoallomas',
-        '/references/ceginformacio',
-        '/references/transferpricing24',
-        '/references/ugyfelportal',
-        '/references/scafellpike'
-      ]
-
-      return routes
-
-      // return axios.get('https://nuxt-blog-74b24.firebaseio.com/posts.json') // not the nuxt module, the "original" axios package
-      //   .then(res => {
-      //     const routes = []
-      //     for (const key in res.data) {
-      //       routes.push({
-      //         route: '/posts/' + key,
-      //         payload:  {postData: res.data[key]}
-      //       })
-      //     }
-      //     return routes
-      //   })
-      // return [
-      // '/posts/-LVckMxPJBIMKp7cual5'
-      // ]
+      return axios.get(`${process.env.API_BASE_URL}/wp-json/wp/v2/references`)
+        .then(res => {
+          const routes = []
+          res.data.forEach((el) => {
+            routes.push('/references/' + el.acf.slug)
+          })
+          return routes
+        })
     }
   }
 }

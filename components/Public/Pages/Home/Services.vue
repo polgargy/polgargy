@@ -31,3 +31,9 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+i {
+  font-size: $h3-font-size;
+}
+</style>

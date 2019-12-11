@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
-// Bootstrap
-@import 'bootstrap';
+@import 'variables';
+
+@import '~bootstrap/scss/bootstrap';
+
+@import 'mixins';
 
 // Font Awesome
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
@@ -11,11 +14,4 @@
 // Animate.css
 @import '~animate.css/animate';
 
-// Components
-@import "components/_partials/header";
-@import "components/_partials/intro";
-
-
 @import "_common";
-@import "pages/_home";
-@import "pages/_reference";

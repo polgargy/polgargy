@@ -88,3 +88,17 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.reference-item {
+  cursor: pointer;
+}
+
+.blueimp-gallery {
+  a.prev,
+  a.next,
+  a.close {
+    color: $white;
+  }
+}
+</style>

@@ -51,3 +51,33 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+section {
+  background-size: cover;
+  background-position: center;
+
+  color: $white;
+
+  .col {
+    background: rgba(10, 10, 10, 0.7);
+  }
+
+  transition: height 0.2s;
+
+  body.home & {
+    height: 600px;
+  }
+
+  body.reference & {
+    height: 300px;
+  }
+}
+
+// >= 992px
+@include media-breakpoint-up(lg) {
+  section {
+    background-attachment: fixed;
+  }
+}
+</style>

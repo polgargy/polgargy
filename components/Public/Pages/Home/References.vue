@@ -42,3 +42,41 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+section {
+  padding-bottom: 0;
+
+  .reference-item {
+    background: $black;
+    padding: 0;
+    position: relative;
+
+    h4 {
+      color: $white;
+      font-weight: 700;
+      opacity: 1;
+      position: absolute;
+      bottom: 50%;
+      width: 100%;
+      transform: translateY(50%);
+    }
+
+    img {
+      opacity: 0.5;
+    }
+
+    &:hover {
+      h4 {
+        opacity: 0;
+        transition: all 0.5s;
+      }
+
+      img {
+        opacity: 1;
+        transition: opacity 0.5s;
+      }
+    }
+  }
+}
+</style>

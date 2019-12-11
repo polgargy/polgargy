@@ -39,3 +39,22 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+h3 {
+  font-size: $h4-font-size;
+}
+
+table {
+  a {
+    color: $white;
+  }
+
+  tr {
+    td:nth-child(2) {
+      text-align: left;
+      padding-left: 0.5rem;
+    }
+  }
+}
+</style>

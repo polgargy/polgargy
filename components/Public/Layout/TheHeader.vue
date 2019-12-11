@@ -106,3 +106,30 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+header {
+  nav {
+    background: rgba(10, 10, 10, 0.95);
+
+    img.logo {
+      height: 30px;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  header {
+    nav {
+      background: transparent;
+      transition: background 0.25s linear;
+    }
+
+    &.sticky-header {
+      nav {
+        background: rgba(10, 10, 10, 0.95);
+      }
+    }
+  }
+}
+</style>

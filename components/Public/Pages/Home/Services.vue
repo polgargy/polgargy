@@ -1,17 +1,19 @@
 <template>
   <section class="services">
-    <div class="container">
-      <div class="row">
-        <div
+    <b-container>
+      <b-row>
+        <b-col
           v-for="(s, idx) in services.services"
           :key="idx"
-          class="col-12 col-md text-center mb-4"
+          cols="12"
+          md
+          class="text-center mb-4"
         >
           <i :class="s.icon.class" class="mb-4" />
           <p>{{ s[`title_${locale}`] }}</p>
-        </div>
-      </div>
-    </div>
+        </b-col>
+      </b-row>
+    </b-container>
   </section>
 </template>
 

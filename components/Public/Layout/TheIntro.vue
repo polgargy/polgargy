@@ -5,14 +5,14 @@
     :style="{ backgroundImage: `url(${intro.background_sm})` }"
     class="text-center"
   >
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col">
+    <b-container class="h-100">
+      <b-row class="h-100" align-v="center">
+        <b-col>
           <h1>{{ intro[`title_${locale}`] }}</h1>
           <h2>{{ intro[`subtitle_${locale}`] }}</h2>
-        </div>
-      </div>
-    </div>
+        </b-col>
+      </b-row>
+    </b-container>
   </section>
 </template>
 

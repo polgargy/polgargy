@@ -1,61 +1,41 @@
 <template>
   <header :class="headerClass" class="fixed-top">
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-      <nuxt-link to="/" class="navbar-brand" href="#">
-        <img :src="logoUrl" alt="Logo" class="img-fluid logo" />
-      </nuxt-link>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbar-content"
-        aria-controls="navbar-content"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon" />
-      </button>
+    <b-navbar v-b-scrollspy toggleable="lg" type="dark">
+      <b-navbar-brand to="/">
+        <b-img :src="logoUrl" fluid alt="Logo" class="logo" />
+      </b-navbar-brand>
 
-      <div id="navbar-content" class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-          <!-- Home page -->
+      <b-navbar-toggle target="nav-collapse" />
+
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav class="ml-auto">
+          <!-- Nav on Home page -->
           <template v-if="isHomePage">
-            <li v-for="(navItem, idx) in nav" :key="idx" class="nav-item">
-              <a :href="`#${navItem.slug}`" class="nav-link">
-                {{ navItem[`title_${locale}`] }}
-              </a>
-            </li>
-          </template>
-        </ul>
-
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a
-              id="lang-switch"
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
+            <b-nav-item
+              v-for="(navItem, idx) in nav"
+              :key="idx"
+              :href="`#${navItem.slug}`"
             >
-              {{ locale | uppercase }}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="lang-switch">
-              <a
-                v-for="(lang, idx) in langs"
-                :key="idx"
-                :class="lang === locale ? 'active' : ''"
-                @click.prevent="changeLang(lang)"
-                class="dropdown-item"
-                href="#"
-                >{{ lang | uppercase }}</a
-              >
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
+              {{ navItem[`title_${locale}`] }}
+            </b-nav-item>
+          </template>
+
+          <!-- Locale -->
+          <b-nav-item-dropdown
+            :text="locale | uppercase"
+            class="nav-item dropdown"
+          >
+            <b-dropdown-item
+              v-for="(lang, idx) in langs"
+              :key="idx"
+              @click.prevent="changeLang(lang)"
+              href="#"
+              >{{ lang | uppercase }}</b-dropdown-item
+            >
+          </b-nav-item-dropdown>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
   </header>
 </template>
 
@@ -63,15 +43,6 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  head() {
-    return {
-      bodyAttrs: {
-        'data-spy': 'scroll',
-        'data-target': '#navbar'
-        // 'data-offset': '10'
-      }
-    }
-  },
   data() {
     return {
       isHomePage: true,
@@ -135,3 +106,30 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+header {
+  nav {
+    background: rgba(10, 10, 10, 0.95);
+
+    img.logo {
+      height: 30px;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  header {
+    nav {
+      background: transparent;
+      transition: background 0.25s linear;
+    }
+
+    &.sticky-header {
+      nav {
+        background: rgba(10, 10, 10, 0.95);
+      }
+    }
+  }
+}
+</style>

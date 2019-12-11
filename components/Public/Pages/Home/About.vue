@@ -1,18 +1,19 @@
 <template>
   <section id="about" class="about">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-8 offset-2 col-lg-4 mb-4">
-          <img
+    <b-container>
+      <b-row align-v="center">
+        <b-col cols="8" offset="2" lg="4" offset-lg="0" class="mb-4">
+          <b-img
             :src="about.profile_pic.url"
             :alt="about.profile_pic.title"
-            class="img-fluid shadow"
+            fluid
+            class="shadow"
           />
-        </div>
+        </b-col>
 
-        <div v-html="about[`content_${locale}`]" class="col-12 col-lg" />
-      </div>
-    </div>
+        <b-col v-html="about[`content_${locale}`]" cols="12" lg />
+      </b-row>
+    </b-container>
   </section>
 </template>
 

@@ -2,9 +2,9 @@
   <section id="reference">
     <h3>{{ ref[`title_${locale}`] }}</h3>
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
+    <b-container>
+      <b-row>
+        <b-col>
           <div
             v-if="ref[`content_${locale}`]"
             v-html="ref[`content_${locale}`]"
@@ -13,8 +13,8 @@
           <p v-if="ref.url">
             <a :href="ref.url" target="_blank">{{ ref.url }}</a>
           </p>
-        </div>
-      </div>
+        </b-col>
+      </b-row>
 
       <client-only>
         <VueGallery
@@ -24,29 +24,31 @@
         />
       </client-only>
 
-      <div class="row my-4">
-        <div
+      <b-row class="my-4">
+        <b-col
           v-for="(thumb, idx) in ref.gallery.thumbnails"
           :key="idx"
-          class="reference-item col-12 col-sm mb-4"
+          cols="12"
+          sm
+          class="reference-item mb-4"
         >
-          <img
+          <b-img
             :alt="ref[`title_${locale}${idx}`]"
             :src="thumb"
             @click="index = idx"
-            class="img-fluid"
+            fluid
           />
-        </div>
-      </div>
+        </b-col>
+      </b-row>
 
-      <div class="row">
-        <div class="col">
+      <b-row>
+        <b-col>
           <nuxt-link to="/" class="btn btn-primary"
             ><i class="fas fa-chevron-left" /> {{ $t('back') }}
           </nuxt-link>
-        </div>
-      </div>
-    </div>
+        </b-col>
+      </b-row>
+    </b-container>
   </section>
 </template>
 
@@ -86,3 +88,17 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.reference-item {
+  cursor: pointer;
+}
+
+.blueimp-gallery {
+  a.prev,
+  a.next,
+  a.close {
+    color: $white;
+  }
+}
+</style>

@@ -16,46 +16,15 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black:    #000;
 
-// $border-color: $gray-300;
-
-// $box-shadow-sm:  0 .125rem .25rem rgba($black, .075);
-// $box-shadow:     0 .5rem 1rem rgba($black, .15);
-// $box-shadow-lg:  0 1rem 3rem rgba($black, .175);
 
 // Fonts
 $font-family-sans-serif: 'Raleway', sans-serif;
-// $body-bg:                #eaeaea;
-// $body-color:             #58595b;
 
 $font-size-base:         1rem;                               // 16
 $font-size-lg:           ($font-size-base * 1.25);           // 20
-// $font-size-sm:           ($font-size-base * .875);           // 14
-// $font-size-xs:           ($font-size-base * .75) !default;   // 12
-// $font-size-xxs:          ($font-size-base * .625) !default;   // 10
-
-// $font-weight-normal:     400;
-// $font-weight-semibold:   500 !default;
-// $font-weight-bold:       700;
 
 
 $h1-font-size:           $font-size-base * 3.5;    // 56
 $h2-font-size:           $font-size-base * 2.5;    // 40
 $h3-font-size:           $font-size-base * 2;      // 32
 $h4-font-size:           $font-size-base * 1.5625; // 25
-// $h5-font-size:           $font-size-base * 1.25;   // 20
-// $h6-font-size:           $font-size-base;          // 16
-
-// Grid
-// $grid-gutter-width:      40px;
-
-// Spacings
-// $sp-sm:                     5px !default;
-// $sp:                        10px !default;
-
-// $nav-height:                $sp * 8 !default;
-
-// Needs fix footer height for all sizes because of the main swiper
-// $footer-height-xs:          $sp * 40 !default;
-// $footer-height-sm:          $sp * 30 !default;
-// $footer-height-md:          $sp * 28 !default;
-// $footer-height-lg:          $sp * 22.5 !default;

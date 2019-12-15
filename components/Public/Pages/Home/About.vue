@@ -1,5 +1,6 @@
 <template>
   <section id="about" class="about">
+    <div class="animate-container">
     <b-container>
       <b-row align-v="center">
         <b-col cols="8" offset="2" lg="4" offset-lg="0" class="mb-4">
@@ -14,6 +15,7 @@
         <b-col v-html="about[`content_${locale}`]" cols="12" lg />
       </b-row>
     </b-container>
+    </div>
   </section>
 </template>
 

@@ -1,29 +1,32 @@
 <template>
   <section id="references" class="references">
-    <h3>{{ referencesText[`title_${locale}`] }}</h3>
+    <div class="animate-container">
+      <h3>{{ referencesText[`title_${locale}`] }}</h3>
 
-    <b-container fluid>
-      <b-row>
-        <b-col
-          v-for="(r, idx) in references"
-          :key="idx"
-          cols="12"
-          sm="6"
-          md="3"
-          class="reference-item text-center"
-        >
-          <nuxt-link :to="'/references/' + r.slug">
-            <b-img
-              :alt="r[`title_${locale}`]"
-              :src="r.screens[0].thumbnail.url"
-              fluid
-            />
+      <b-container fluid>
+        <b-row>
+          <b-col
+            v-for="(r, idx) in references"
+            :key="idx"
+            :style="{ animationDelay: `${(idx + 1) * 0.1}s` }"
+            cols="12"
+            sm="6"
+            md="3"
+            class="reference-item text-center"
+          >
+            <nuxt-link :to="'/references/' + r.slug">
+              <b-img
+                :alt="r[`title_${locale}`]"
+                :src="r.screens[0].thumbnail.url"
+                fluid
+              />
 
-            <h4>{{ r[`title_${locale}`] }}</h4>
-          </nuxt-link>
-        </b-col>
-      </b-row>
-    </b-container>
+              <h4>{{ r[`title_${locale}`] }}</h4>
+            </nuxt-link>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
   </section>
 </template>
 
@@ -51,6 +54,13 @@ section {
     background: $black;
     padding: 0;
     position: relative;
+
+    // References are animated separately
+    // @for $i from 1 through 8 {
+    //   &:nth-of-type(#{$i}) {
+    //     animation-delay: $i * 0.1s;
+    //   }
+    // }
 
     h4 {
       color: $white;

@@ -1,27 +1,29 @@
 <template>
   <section id="contact" class="contact">
-    <h3>{{ contact[`title_${locale}`] }}</h3>
+    <div class="animate-container">
+      <h3>{{ contact[`title_${locale}`] }}</h3>
 
-    <b-container>
-      <b-row class="justify-content-center">
-        <b-col cols="center" class="text-center">
-          <table>
-            <tbody>
-              <tr v-for="(contact, idx) in contact.contacts" :key="idx">
-                <td>
-                  <i :class="contact.icon.class" />
-                </td>
-                <td>
-                  <a :href="contact.link" target="_blank">{{
-                    contact.title
-                  }}</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </b-col>
-      </b-row>
-    </b-container>
+      <b-container>
+        <b-row class="justify-content-center">
+          <b-col cols="center" class="text-center">
+            <table>
+              <tbody>
+                <tr v-for="(contact, idx) in contact.contacts" :key="idx">
+                  <td>
+                    <i :class="contact.icon.class" />
+                  </td>
+                  <td>
+                    <a :href="contact.link" target="_blank">{{
+                      contact.title
+                    }}</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
   </section>
 </template>
 

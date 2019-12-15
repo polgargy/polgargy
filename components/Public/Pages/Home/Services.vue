@@ -1,5 +1,6 @@
 <template>
   <section class="services">
+    <div class="animate-container">
     <b-container>
       <b-row>
         <b-col
@@ -14,6 +15,7 @@
         </b-col>
       </b-row>
     </b-container>
+    </div>
   </section>
 </template>
 

@@ -1,6 +1,10 @@
 <template>
   <header :class="headerClass" class="fixed-top">
-    <b-navbar v-b-scrollspy toggleable="lg" type="dark">
+    <b-navbar
+      v-b-scrollspy="{ offset: scrollspyOffset }"
+      toggleable="lg"
+      type="dark"
+    >
       <b-navbar-brand to="/">
         <b-img :src="logoUrl" fluid alt="Logo" class="logo" />
       </b-navbar-brand>
@@ -48,7 +52,8 @@ export default {
       isHomePage: true,
       headerClass: '',
       logoUrl: `${process.env.apiBaseUrl}/wp-content/uploads/logo.svg`,
-      langs: ['hu', 'en']
+      langs: ['hu', 'en'],
+      scrollspyOffset: 50
     }
   },
   computed: {
@@ -69,7 +74,7 @@ export default {
   },
   mounted() {
     if (this.isHomePage) {
-      window.SmoothScroll('a[href*="#"]')
+      window.SmoothScroll('a[href*="#"]', { offset: this.scrollspyOffset })
     }
 
     this.checkScroll()
@@ -87,14 +92,27 @@ export default {
       if (this.$getScrollPos() > 0) {
         this.headerClass = 'sticky-header'
 
-        this.$animateElement('section.about .row', 'fadeIn', 2)
-        this.$animateElement('section.services .row', 'fadeInUp', 2)
+        this.$animateElement('section.about .animate-container', 'fadeIn', 300)
+        this.$animateElement(
+          'section.services .animate-container',
+          'fadeInUp',
+          200
+        )
+        this.$animateElement(
+          'section.references .animate-container',
+          'fadeIn',
+          200
+        )
         this.$animateElement(
           'section.references .reference-item',
           'fadeIn',
-          1.2
+          150
         )
-        this.$animateElement('section.contact .row', 'fadeInUp')
+        this.$animateElement(
+          'section.contact .animate-container',
+          'fadeInUp',
+          100
+        )
       } else {
         this.headerClass = ''
       }

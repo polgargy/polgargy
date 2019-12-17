@@ -9,9 +9,9 @@
             v-for="(r, idx) in references"
             :key="idx"
             :style="{ animationDelay: `${(idx + 1) * 0.1}s` }"
+            :sm="smClass"
+            :md="mdClass"
             cols="12"
-            sm="6"
-            md="3"
             class="reference-item text-center"
           >
             <nuxt-link :to="'/references/' + r.slug">
@@ -41,6 +41,32 @@ export default {
     }),
     locale() {
       return this.$i18n.locale
+    },
+    smClass() {
+      const reflength = this.references.length
+      let cl = 12
+
+      if (reflength % 3 === 0) {
+        cl = 4
+      } else if (reflength % 2 === 0) {
+        cl = 6
+      }
+
+      return cl
+    },
+    mdClass() {
+      const reflength = this.references.length
+      let cl = 12
+
+      if (reflength % 4 === 0) {
+        cl = 3
+      } else if (reflength % 3 === 0) {
+        cl = 4
+      } else if (reflength % 2 === 0) {
+        cl = 6
+      }
+
+      return cl
     }
   }
 }

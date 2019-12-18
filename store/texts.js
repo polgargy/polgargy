@@ -9,22 +9,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  mutSetMeta(state, metaData) {
-    const meta = metaData
-
-    meta.meta_keywords_str_hu = ''
-    meta.meta_keywords_str_en = ''
-
-    metaData.meta_keywords_hu.forEach((el, index, keywords) => {
-      meta.meta_keywords_str_hu += el.keyword
-      meta.meta_keywords_str_hu += index < keywords.length - 1 ? ', ' : ''
-    })
-
-    metaData.meta_keywords_en.forEach((el, index, keywords) => {
-      meta.meta_keywords_str_en += el.keyword
-      meta.meta_keywords_str_en += index < keywords.length - 1 ? ', ' : ''
-    })
-
+  mutSetMeta(state, meta) {
     state.meta = meta
   },
 

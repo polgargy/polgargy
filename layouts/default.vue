@@ -32,11 +32,6 @@ export default {
           hid: 'description',
           name: 'description',
           content: this.meta[`meta_description_${this.locale}`]
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content: this.meta[`meta_keywords_str_${this.locale}`]
         }
       ]
     }

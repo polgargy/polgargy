@@ -13,13 +13,19 @@
         </b-col>
       </b-row>
     </b-container>
+    <SlideDown :slide-to="'#about'" />
   </section>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 
+import SlideDown from '@/components/Public/Common/SlideDown.vue'
+
 export default {
+  components: {
+    SlideDown
+  },
   data() {
     return {
       windowWidth: 0
@@ -59,6 +65,8 @@ section {
 
   color: $white;
 
+  position: relative; // for SlideDown
+
   .col {
     background: rgba(10, 10, 10, 0.7);
   }
@@ -66,7 +74,7 @@ section {
   transition: height 0.2s;
 
   body.home & {
-    height: 600px;
+    height: 100vh;
   }
 
   body.reference & {

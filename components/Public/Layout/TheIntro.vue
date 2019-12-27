@@ -13,7 +13,9 @@
         </b-col>
       </b-row>
     </b-container>
-    <SlideDown :slide-to="'#about'" />
+    <template v-if="isHomePage">
+      <SlideDown :slide-to="'#about'" />
+    </template>
   </section>
 </template>
 
@@ -28,6 +30,7 @@ export default {
   },
   data() {
     return {
+      isHomePage: true,
       windowWidth: 0
     }
   },
@@ -40,17 +43,30 @@ export default {
     }
   },
   watch: {
+    $route() {
+      this.checkIfHomePage()
+    },
     windowWidth(width) {
       width > 992
         ? (this.$refs.introSection.style.backgroundImage = `url(${this.intro.background})`)
         : (this.$refs.introSection.style.backgroundImage = `url(${this.intro.background_sm})`)
     }
   },
+  created() {
+    this.checkIfHomePage()
+  },
   mounted() {
     window.addEventListener('resize', this.handleResize)
     this.handleResize()
   },
   methods: {
+    checkIfHomePage() {
+      if (this.$route.name === 'references-slug') {
+        this.isHomePage = false
+      } else {
+        this.isHomePage = true
+      }
+    },
     handleResize() {
       this.windowWidth = window.innerWidth
     }

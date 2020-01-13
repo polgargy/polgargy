@@ -16,6 +16,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@include ie() {
+  .slide-down {
+    display: none;
+  }
+}
+
 $icon-width: 30px;
 
 a {

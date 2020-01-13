@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
-
+@import 'fonts';
 @import 'variables';
 
 @import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-vue/src/index';
 
 @import 'mixins';
 

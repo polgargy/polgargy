@@ -1,5 +1,3 @@
-// const pkg = require('./package')
-import webpack from 'webpack'
 require('dotenv').config()
 const axios = require('axios')
 
@@ -63,7 +61,7 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [,
+  modules: [
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
     '@nuxtjs/style-resources',

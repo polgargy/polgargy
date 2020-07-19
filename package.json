@@ -17,12 +17,10 @@
     "@nuxtjs/google-analytics": "^2.2.1",
     "animate.css": "^3.7.2",
     "bootstrap-vue": "^2.0.0",
-    "bootstrap": "^4.3.1",
     "cross-env": "^5.2.1",
-    "jquery": "^3.4.1",
     "js-cookie": "^2.2.1",
     "nuxt": "^2.0.0",
-    "popper.js": "^1.16.0",
+    "parallax-vanilla": "^1.2.3",
     "smooth-scroll": "^16.1.0",
     "vue-gallery": "^2.0.1",
     "vue-i18n": "^8.15.0"

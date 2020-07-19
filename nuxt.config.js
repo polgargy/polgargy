@@ -82,7 +82,7 @@ export default {
   },
 
   googleAnalytics: {
-    id: process.env.ANALYTICS,
+    id: process.env.ANALYTICS
   },
 
   pageTransition: {

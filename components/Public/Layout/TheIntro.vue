@@ -1,16 +1,14 @@
 <template>
   <section id="intro" class="text-center">
-    <div class="pv-container text-center">
-      <div :pv-mediapath="introBackground" class="pv-block" />
-
-      <div class="title-container">
-        <h1>{{ intro[`title_${locale}`] }}</h1>
-        <h2>{{ intro[`subtitle_${locale}`] }}</h2>
-      </div>
-    </div>
+    <template v-if="isMobile">
+      <TheParallaxM :intro="intro" />
+    </template>
+    <template v-else>
+      <TheParallaxD :intro="intro" />
+    </template>
 
     <template v-if="isHomePage">
-      <SlideDown :slide-to="'#about'" />
+      <TheSlideDown :slide-to="'#about'" />
     </template>
   </section>
 </template>
@@ -19,16 +17,20 @@
 import { mapGetters } from 'vuex'
 import _ from 'lodash'
 
-import SlideDown from '@/components/Public/Common/SlideDown.vue'
+import TheParallaxD from './Intro/TheParallaxD.vue'
+import TheParallaxM from './Intro/TheParallaxM.vue'
+import TheSlideDown from './Intro/TheSlideDown.vue'
 
 export default {
   components: {
-    SlideDown
+    TheParallaxD,
+    TheParallaxM,
+    TheSlideDown
   },
   data() {
     return {
       isHomePage: true,
-      windowWidth: 0
+      isMobile: true,
     }
   },
   computed: {
@@ -37,11 +39,6 @@ export default {
     }),
     locale() {
       return this.$i18n.locale
-    },
-    introBackground() {
-      return this.windowWidth > 992
-        ? this.intro.background
-        : this.intro.background_sm
     }
   },
   watch: {
@@ -57,18 +54,8 @@ export default {
       'resize',
       _.throttle(this.handleResize, 500, { leading: false })
     )
-    this.handleResize()
 
-    require('parallax-vanilla')
-    /* eslint-disable-next-line */
-    pv.init({
-      container: {
-        height: '100vh'
-      },
-      block: {
-        // speed: 1,
-      }
-    })
+    this.handleResize()
   },
   methods: {
     checkIfHomePage() {
@@ -81,8 +68,8 @@ export default {
       }
     },
     handleResize() {
-      this.windowWidth = window.innerWidth
-    }
+      this.isMobile = window.innerWidth <= 992
+    },
   }
 }
 </script>
@@ -93,7 +80,7 @@ section {
   padding: 0;
   position: relative; // for SlideDown
 
-  .pv-container {
+  ::v-deep .pv-container {
     position: relative;
     transition: height 0.2s;
 
@@ -120,7 +107,7 @@ section {
 // >= 576px
 @include media-breakpoint-up(sm) {
   section {
-    .pv-container {
+    ::v-deep .pv-container {
       .title-container {
         width: 80%;
       }
@@ -131,7 +118,7 @@ section {
 // >= 992px
 @include media-breakpoint-up(lg) {
   section {
-    .pv-container {
+    ::v-deep .pv-container {
       .title-container {
         width: 60%;
       }

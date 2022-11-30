@@ -8,5 +8,6 @@ module.exports = {
   rules: {
     'at-rule-no-unknown': null,
     'block-no-empty': null,
+    'selector-pseudo-element-no-unknown': null,
   }
 }

@@ -3,13 +3,7 @@
     <div class="animate-container">
       <b-container>
         <b-row>
-          <b-col
-            v-for="(s, idx) in services.services"
-            :key="idx"
-            cols="12"
-            md
-            class="service text-center"
-          >
+          <b-col v-for="(s, idx) in services.services" :key="idx" cols="12" md class="service text-center">
             <i :class="s.icon.class" class="mb-4" />
             <p>{{ s[`title_${locale}`] }}</p>
           </b-col>

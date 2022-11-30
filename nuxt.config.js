@@ -1,9 +1,7 @@
+import axios from 'axios'
 require('dotenv').config()
-const axios = require('axios')
 
 export default {
-  mode: 'universal',
-
   /*
   ** Headers of the page
   */
@@ -17,10 +15,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [{
-      src: '/plugins/polyfill/polyfill.min.js'
-    }]
+    ]
   },
 
   /*
@@ -54,9 +49,19 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/stylelint
+    '@nuxtjs/stylelint-module',
   ],
+
+  eslint: {
+    fix: true
+  },
+
+  stylelint: {
+    fix: true
+  },
 
   /*
   ** Nuxt.js modules
@@ -90,35 +95,13 @@ export default {
     mode: 'out-in'
   },
 
-  /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-          options: {
-            fix: true
-          }
-        })
-      }
-    }
-  },
   env: {
     apiHomeId: process.env.API_HOME_ID,
     defaultLocale: process.env.DEFAULT_LOCALE,
     apiBaseUrl: process.env.API_BASE_URL
   },
   generate: {
-    routes: function() {
+    routes: () => {
       // Fetch all of the dynamic routes:
       return axios.get(`${process.env.API_BASE_URL}/wp-json/wp/v2/references`)
         .then(res => {

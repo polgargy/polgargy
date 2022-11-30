@@ -91,7 +91,6 @@ export default {
 section {
   color: $white;
   padding: 0;
-
   position: relative; // for SlideDown
 
   .pv-container {
@@ -112,7 +111,6 @@ section {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-
       padding: 1rem;
       width: 100%;
     }

@@ -12,10 +12,10 @@
   ::-webkit-input-placeholder {
     color: transparent;
   }
-  :-moz-placeholder {
+  ::-moz-placeholder {
     color: transparent;
   }
- ::-moz-placeholder {
+  :-moz-placeholder {
     color: transparent;
   }
  :-ms-input-placeholder {
@@ -26,13 +26,6 @@
 @mixin vertical-center($height) {
   height: $height;
   line-height: $height;
-}
-
-@mixin ie() {
-  // IE 10+
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    @content;
-  }
 }
 
 @mixin edge() {

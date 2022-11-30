@@ -4,15 +4,10 @@
       <b-container>
         <b-row align-v="center">
           <b-col cols="8" offset="2" lg="4" offset-lg="0">
-            <b-img
-              :src="about.profile_pic.url"
-              :alt="about.profile_pic.title"
-              fluid
-              class="shadow"
-            />
+            <b-img :src="about.profile_pic.url" :alt="about.profile_pic.title" fluid class="shadow" />
           </b-col>
 
-          <b-col v-html="about[`content_${locale}`]" cols="12" lg />
+          <b-col cols="12" lg v-html="about[`content_${locale}`]" />
         </b-row>
       </b-container>
     </div>

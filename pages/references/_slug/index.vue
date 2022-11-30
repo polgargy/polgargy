@@ -5,10 +5,7 @@
     <b-container>
       <b-row>
         <b-col>
-          <div
-            v-if="ref[`content_${locale}`]"
-            v-html="ref[`content_${locale}`]"
-          />
+          <div v-if="ref[`content_${locale}`]" v-html="ref[`content_${locale}`]" />
 
           <p v-if="ref.url">
             <a :href="ref.url" target="_blank">{{ ref.url }}</a>
@@ -17,34 +14,18 @@
       </b-row>
 
       <client-only>
-        <VueGallery
-          :images="ref.gallery.originals"
-          :index="index"
-          @close="index = null"
-        />
+        <VueGallery :images="ref.gallery.originals" :index="index" @close="index = null" />
       </client-only>
 
       <b-row class="my-4">
-        <b-col
-          v-for="(thumb, idx) in ref.gallery.thumbnails"
-          :key="idx"
-          cols="12"
-          sm
-          class="reference-item mb-4"
-        >
-          <b-img
-            :alt="ref[`title_${locale}${idx}`]"
-            :src="thumb"
-            @click="index = idx"
-            fluid
-          />
+        <b-col v-for="(thumb, idx) in ref.gallery.thumbnails" :key="idx" cols="12" sm class="reference-item mb-4">
+          <b-img :alt="ref[`title_${locale}${idx}`]" :src="thumb" fluid @click="index = idx" />
         </b-col>
       </b-row>
 
       <b-row>
         <b-col>
-          <nuxt-link to="/" class="btn btn-primary"
-            ><i class="fas fa-chevron-left" /> {{ $t('back') }}
+          <nuxt-link to="/" class="btn btn-primary"><i class="fas fa-chevron-left" /> {{ $t('back') }}
           </nuxt-link>
         </b-col>
       </b-row>
@@ -56,6 +37,14 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  data() {
+    return {
+      index: null
+    }
+  },
+  async fetch({ store, params }) {
+    await store.dispatch('references/fetchOne', params.slug)
+  },
   head() {
     return {
       title:
@@ -69,11 +58,6 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      index: null
-    }
-  },
   computed: {
     ...mapGetters({
       ref: 'references/getReference',
@@ -83,9 +67,6 @@ export default {
       return this.$i18n.locale
     }
   },
-  async fetch({ store, params }) {
-    await store.dispatch('references/fetchOne', params.slug)
-  }
 }
 </script>
 
@@ -95,6 +76,7 @@ export default {
 }
 
 .blueimp-gallery {
+
   a.prev,
   a.next,
   a.close {

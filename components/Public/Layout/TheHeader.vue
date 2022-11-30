@@ -1,10 +1,6 @@
 <template>
   <header :class="headerClass" class="fixed-top">
-    <b-navbar
-      v-b-scrollspy="{ offset: scrollspyOffset }"
-      toggleable="lg"
-      type="dark"
-    >
+    <b-navbar v-b-scrollspy="{ offset: scrollspyOffset }" toggleable="lg" type="dark">
       <b-navbar-brand to="/">
         <b-img :src="logoUrl" fluid alt="Logo" class="logo" />
       </b-navbar-brand>
@@ -15,27 +11,16 @@
         <b-navbar-nav class="ml-auto">
           <!-- Nav on Home page -->
           <template v-if="isHomePage">
-            <b-nav-item
-              v-for="(navItem, idx) in nav"
-              :key="idx"
-              :href="`#${navItem.slug}`"
-            >
+            <b-nav-item v-for="(navItem, idx) in nav" :key="idx" :href="`#${navItem.slug}`">
               {{ navItem[`title_${locale}`] }}
             </b-nav-item>
           </template>
 
           <!-- Locale -->
-          <b-nav-item-dropdown
-            :text="locale | uppercase"
-            class="nav-item dropdown"
-          >
-            <b-dropdown-item
-              v-for="(lang, idx) in langs"
-              :key="idx"
-              @click.prevent="changeLang(lang)"
-              href="#"
-              >{{ lang | uppercase }}</b-dropdown-item
-            >
+          <b-nav-item-dropdown :text="locale | uppercase" class="nav-item dropdown">
+            <b-dropdown-item v-for="(lang, idx) in langs" :key="idx" href="#" @click.prevent="changeLang(lang)">{{ lang
+                | uppercase
+            }}</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>

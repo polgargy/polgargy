@@ -15,11 +15,7 @@
             class="reference-item text-center"
           >
             <nuxt-link :to="'/references/' + r.slug">
-              <b-img
-                :alt="r[`title_${locale}`]"
-                :src="r.screens[0].thumbnail.url"
-                fluid
-              />
+              <b-img :alt="r[`title_${locale}`]" :src="r.screens[0].thumbnail.url" fluid />
 
               <h4>{{ r[`title_${locale}`] }}</h4>
             </nuxt-link>
@@ -67,7 +63,7 @@ export default {
       }
 
       return cl
-    }
+    },
   }
 }
 </script>

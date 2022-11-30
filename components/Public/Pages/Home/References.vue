@@ -1,19 +1,12 @@
 <template>
   <section id="references" class="references">
-    <div class="animate-container">
+    <div class="animated__animated">
       <h3>{{ referencesText[`title_${locale}`] }}</h3>
 
       <b-container fluid>
         <b-row>
-          <b-col
-            v-for="(r, idx) in references"
-            :key="idx"
-            :style="{ animationDelay: `${(idx + 1) * 0.1}s` }"
-            :sm="smClass"
-            :md="mdClass"
-            cols="12"
-            class="reference-item text-center"
-          >
+          <b-col v-for="(r, idx) in references" :key="idx" :style="{ animationDelay: `${(idx + 1) * 0.1}s` }"
+            :sm="smClass" :md="mdClass" cols="12" class="reference-item text-center animate__animated">
             <nuxt-link :to="'/references/' + r.slug">
               <b-img :alt="r[`title_${locale}`]" :src="r.screens[0].thumbnail.url" fluid />
 
@@ -76,13 +69,6 @@ section {
     background: $black;
     padding: 0;
     position: relative;
-
-    // References are animated separately
-    // @for $i from 1 through 8 {
-    //   &:nth-of-type(#{$i}) {
-    //     animation-delay: $i * 0.1s;
-    //   }
-    // }
 
     h4 {
       color: $white;

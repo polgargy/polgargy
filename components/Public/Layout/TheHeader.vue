@@ -77,14 +77,14 @@ export default {
       if (this.$getScrollPos() > 0) {
         this.headerClass = 'sticky-header'
 
-        this.$animateElement('section.about .animate-container', 'fadeIn', 300)
+        this.$animateElement('section.about .animate__animated', 'fadeIn', 300)
         this.$animateElement(
-          'section.services .animate-container',
+          'section.services .animate__animated',
           'fadeInUp',
           200
         )
         this.$animateElement(
-          'section.references .animate-container',
+          'section.references .animate__animated',
           'fadeIn',
           200
         )
@@ -94,7 +94,7 @@ export default {
           150
         )
         this.$animateElement(
-          'section.contact .animate-container',
+          'section.contact .animate__animated',
           'fadeInUp',
           100
         )

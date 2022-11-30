@@ -1,6 +1,6 @@
 <template>
   <section class="services">
-    <div class="animate-container">
+    <div class="animate__animated">
       <b-container>
         <b-row>
           <b-col v-for="(s, idx) in services.services" :key="idx" cols="12" md class="service text-center">

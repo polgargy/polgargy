@@ -1,6 +1,6 @@
 <template>
   <section id="about" class="about">
-    <div class="animate-container">
+    <div class="animate__animated">
       <b-container>
         <b-row align-v="center">
           <b-col cols="8" offset="2" lg="4" offset-lg="0">

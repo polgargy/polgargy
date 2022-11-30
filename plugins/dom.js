@@ -97,7 +97,7 @@ Vue.prototype.$animateElement = (el, animation, offset = 0) => {
 
     // If the $el is in the viewport (+ some offset in the previous line)
     if ((top > 0 || bottom > 0) && top < vHeight) {
-      el.classList.add(...['animated', animation])
+      el.classList.add(...[`animate__${animation}`])
     }
   })
 }

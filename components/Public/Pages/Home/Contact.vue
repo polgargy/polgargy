@@ -1,6 +1,6 @@
 <template>
   <section id="contact" class="contact">
-    <div class="animate-container">
+    <div class="animate__animated">
       <h3>{{ contact[`title_${locale}`] }}</h3>
 
       <b-container>
@@ -14,7 +14,7 @@
                   </td>
                   <td>
                     <a :href="contact.link" target="_blank">{{
-                      contact.title
+                        contact.title
                     }}</a>
                   </td>
                 </tr>

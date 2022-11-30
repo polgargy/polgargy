@@ -27,18 +27,10 @@ html {
   }
 
   // For animate.css
-  .animate-container,
+  .animate__animated,
   section.references .reference-item {
     animation-duration: 1s;
     opacity: 0;
-
-    @include ie() {
-      opacity: 1;
-    }
-
-    &.animated {
-      opacity: 1;
-    }
   }
 }
 

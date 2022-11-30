@@ -5,13 +5,7 @@ export const state = () => ({
 
 export const mutations = {
   mutSetReferences(state, referencesData) {
-    const references = []
-
-    referencesData.forEach((el) => {
-      references.push(el.acf)
-    })
-
-    state.references = references
+    state.references = referencesData
   },
 
   mutSetReference(state, reference) {

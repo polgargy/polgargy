@@ -1,0 +1,39 @@
+version: '3'
+
+networks:
+    polgargy:
+        driver: bridge
+
+services:
+    # Server container
+    nginxclient:
+        build:
+            context: docker/${DOCKER_ENV}/nginx
+            dockerfile: Dockerfile
+            args:
+                - NGINX_VERSION=${NGINX_VERSION}
+        volumes:
+            - ./:/var/www
+            - ./docker/${DOCKER_ENV}/nginx/logs:/var/log/nginx
+        ports:
+            - "${NGINX_PORT}:80"
+        networks:
+            - polgargy
+
+    # Client container
+    client:
+        build:
+            context: docker/${DOCKER_ENV}/node
+            dockerfile: Dockerfile
+            args:
+                - NODE_VERSION=${NODE_VERSION}
+        networks:
+            - polgargy
+        volumes:
+            - ./:/var/www/
+
+######### Volumes ###################################
+
+volumes:
+    dbdata:
+        driver: local

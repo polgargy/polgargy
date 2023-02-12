@@ -2,6 +2,8 @@ import axios from 'axios'
 require('dotenv').config()
 
 export default {
+  target: process.env.DOCKER_ENV === 'dev' ? 'server' : 'static',
+
   /*
   ** Headers of the page
   */
@@ -108,7 +110,7 @@ export default {
         .then(res => {
           const routes = []
           res.data.forEach((el) => {
-            routes.push('/references/' + el.acf.slug)
+            routes.push('/references/' + el.slug)
           })
           return routes
         })

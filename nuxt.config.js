@@ -95,11 +95,12 @@ export default {
     mode: 'out-in'
   },
 
-  env: {
+  publicRuntimeConfig: {
     apiHomeId: process.env.API_HOME_ID,
     defaultLocale: process.env.DEFAULT_LOCALE,
     apiBaseUrl: process.env.API_BASE_URL
   },
+
   generate: {
     routes: () => {
       // Fetch all of the dynamic routes:

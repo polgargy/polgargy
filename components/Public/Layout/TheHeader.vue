@@ -19,7 +19,7 @@
           <!-- Locale -->
           <b-nav-item-dropdown :text="locale | uppercase" class="nav-item dropdown">
             <b-dropdown-item v-for="(lang, idx) in langs" :key="idx" href="#" @click.prevent="changeLang(lang)">{{ lang
-                | uppercase
+            | uppercase
             }}</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
@@ -36,7 +36,7 @@ export default {
     return {
       isHomePage: true,
       headerClass: '',
-      logoUrl: `${process.env.apiBaseUrl}/wp-content/uploads/logo.svg`,
+      logoUrl: `${this.$config.apiBaseUrl}/wp-content/uploads/logo.svg`,
       langs: ['hu', 'en'],
       scrollspyOffset: 50
     }

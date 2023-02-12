@@ -5,7 +5,7 @@ export const actions = {
       .then((res) => commit('texts/mutSetMeta', res.acf))
 
     await this.$axios
-      .$get(`/wp/v2/pages/${process.env.apiHomeId}`)
+      .$get(`/wp/v2/pages/${this.$config.apiHomeId}`)
       .then((res) => {
         commit('texts/mutSetContent', res.acf)
       })
